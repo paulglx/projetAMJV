@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Attack : MonoBehaviour
 {
@@ -56,7 +57,17 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetStoppingDistance();
+    }
 
+    void SetStoppingDistance()
+    {
+        NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+
+        if (target)
+            navMeshAgent.stoppingDistance = range;
+        else
+            navMeshAgent.stoppingDistance = 1;
     }
 
     public void SetTarget(GameObject newTarget)

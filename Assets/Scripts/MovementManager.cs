@@ -12,12 +12,6 @@ public class MovementManager : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        Attack attack = GetComponent<Attack>();
-        if (attack)
-        {
-            GetComponent<NavMeshAgent>().stoppingDistance = attack.GetRange();
-        }
     }
 
     // Update is called once per frame
