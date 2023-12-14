@@ -34,10 +34,12 @@ public class SelectionManager : MonoBehaviour
 
                 if (target.GetComponent<Health>())
                 {
-                    selectedPlayer.GetComponent<Attack>().DoAttack(target);
+                    selectedPlayer.GetComponent<Attack>().SetTarget(target);
                 }
                 else
                 {
+                    selectedPlayer.GetComponent<Attack>().SetTarget(null);
+
                     Vector3 point = hit.point;
                     selectedPlayer.GetComponent<MovementManager>().GoToPoint(point);
                 }

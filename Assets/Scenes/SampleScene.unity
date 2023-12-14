@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: range
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6568713229870472121, guid: ea2f02795c0d24c5ca6bf6ad78667a30, type: 3}
+      propertyPath: attackDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695916965549671304, guid: ea2f02795c0d24c5ca6bf6ad78667a30, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8060343517458026420, guid: ea2f02795c0d24c5ca6bf6ad78667a30, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5465956
