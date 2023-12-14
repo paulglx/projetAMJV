@@ -9,7 +9,14 @@ public class Attack : MonoBehaviour
     [SerializeField] private float range; // Distance at which the soldier can hit the target
     [SerializeField] private GameObject target; // The attacker will attack the target if in range. Else, it will follow it.
     [SerializeField] private float attackDelay; // Attack delay in seconds
+    [SerializeField] private AttackType attackType = AttackType.CONTACT;
+    [SerializeField] private GameObject projectile;
 
+    enum AttackType
+    {
+        CONTACT,
+        REMOTE
+    }
 
     IEnumerator AttackLoop()
     {
@@ -57,13 +64,28 @@ public class Attack : MonoBehaviour
         target = newTarget;
     }
 
-    public void DoAttack(GameObject target)
+    void DoAttack(GameObject target)
+    {
+        if (attackType == AttackType.CONTACT)
+            DoContactAttack(target);
+        else
+            DoRemoteAttack(target);
+    }
+
+    void DoContactAttack(GameObject target)
     {
         Health targetHealth = target.GetComponent<Health>();
         if (targetHealth)
         {
             targetHealth.ApplyDamage(damage);
         }
+    }
+
+    void DoRemoteAttack(GameObject target)
+    {
+        GameObject newProjectile = Instantiate(projectile);
+        // dire au projectile de viser la cible
+
     }
 
     public float GetRange()
