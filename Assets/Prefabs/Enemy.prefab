@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  health: 0
   shield: 0
   isAlive: 1
 --- !u!195 &6208208567530220059

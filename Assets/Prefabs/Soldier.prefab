@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7695916965549671304}
   - component: {fileID: 6437259177090069429}
   - component: {fileID: 5436241530677658315}
+  - component: {fileID: 6568713229870472121}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -82,8 +83,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  health: 0
   shield: 1
   isAlive: 1
+--- !u!114 &6568713229870472121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 40
+  range: 10
 --- !u!1 &8227634225079913645
 GameObject:
   m_ObjectHideFlags: 0

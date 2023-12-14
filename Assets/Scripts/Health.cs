@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
+        Debug.Log("i take damage");
         health -= Mathf.Max(damage - shield, 0);
         if (health <= 0)
         {

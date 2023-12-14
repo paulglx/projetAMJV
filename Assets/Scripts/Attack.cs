@@ -6,6 +6,8 @@ public class Attack : MonoBehaviour
 {
 
     [SerializeField] private float damage;
+    [SerializeField] private float range; // Distance at which the soldier can hit the target
+    [SerializeField] private GameObject target; // The attacker will attack the target if in range. Else, it will follow it.
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,10 @@ public class Attack : MonoBehaviour
         Health targetHealth = target.GetComponent<Health>();
         if (targetHealth)
         {
-            targetHealth.ApplyDamage(damage);
+
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+            if (distance <= range)
+                targetHealth.ApplyDamage(damage);
         }
     }
 }
