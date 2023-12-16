@@ -33,7 +33,6 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             GameObject target = hit.collider.gameObject;
-            Debug.Log(target);
 
             // A player is clicked : select it
             if (target.CompareTag("Player"))
