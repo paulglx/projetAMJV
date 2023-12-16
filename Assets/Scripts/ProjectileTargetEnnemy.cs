@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileAttack : MonoBehaviour
+public class ProjectileTargetEnnemy : MonoBehaviour
 {
-
+    
     private GameObject targetEnnemy; 
     private Vector3 initialPosition; 
     [SerializeField] private float speed;
 
     [SerializeField] private float damage;
-
+    
+    [SerializeField] private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,35 @@ public class ProjectileAttack : MonoBehaviour
     void Update()
     {
 
-        moveToTarget();
+        if (targetEnnemy==null)
+        {
+            moveToPosition();
+        }
+        else
+        {
+            moveProjectile();
+        }
+        
 
         
     }
 
 
-    private void moveToTarget()
+    private void moveToPosition()
+    {
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed* Time.deltaTime);
+
+        if (transform.position == targetPosition)
+        {
+            Debug.Log("arriver");
+            Destroy(gameObject);
+        
+    }
+
+    }
+
+    private void moveProjectile()
     {
         
         transform.position = Vector3.MoveTowards(transform.position, targetEnnemy.transform.position, speed* Time.deltaTime);
@@ -39,34 +62,16 @@ public class ProjectileAttack : MonoBehaviour
             Debug.Log("arriver");
             Destroy(gameObject);
         }
+
+        targetPosition = targetEnnemy.transform.position;
     }
 
 
-    private void OnCollisionStay(Collision other) 
-    {
-        Debug.Log("OnCollision");
-        Health targetHealth = other.gameObject.GetComponent<Health>();
-        //Pas de tir allié
-        if (other.gameObject.CompareTag("Player"))
-        {
-            
-        }
-        else if (targetHealth)
-        {
-            targetHealth.ApplyDamage(damage);
-            Debug.Log("J'ai fait des dégats");
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Je me suis cogner");
-            Destroy(gameObject);
-        }
-        
-    }
 
-    void OnTriggerStay(Collider other) 
+
+    void OnTriggerEnter(Collider other) 
     {
+        Debug.Log("Trigger");
         Health targetHealth = other.GetComponent<Health>();
         //Pas de tir allié
         if (other.CompareTag("Player"))
@@ -88,11 +93,10 @@ public class ProjectileAttack : MonoBehaviour
     
     public void setProjectile(Vector3 iniPosition, GameObject targEnnemy, float dam)
     {
-        initialPosition = iniPosition;
+        initialPosition = iniPosition + new Vector3(0,1,0);
         targetEnnemy = targEnnemy;
         damage = dam;
         transform.forward = targetEnnemy.transform.position - iniPosition;
 
     }
-
 }

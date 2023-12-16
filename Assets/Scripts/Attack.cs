@@ -95,8 +95,8 @@ public class Attack : MonoBehaviour
     void DoRemoteAttack(GameObject target)
     {
         GameObject newProjectile = Instantiate(projectile);
-        ProjectileAttack projectileAttack =newProjectile.GetComponent<ProjectileAttack>();
-        projectileAttack.setProjectile(transform.position, target, damage);
+        ProjectileTargetPosition projectileAttack =newProjectile.GetComponent<ProjectileTargetPosition>();
+        projectileAttack.setProjectile(transform.position, target.transform.position, damage);
 
     }
 
