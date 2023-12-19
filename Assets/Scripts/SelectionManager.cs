@@ -22,6 +22,18 @@ public class SelectionManager : MonoBehaviour
         {
             HandleClick();
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            HandleCapacity();
+        }
+    }
+
+    void HandleCapacity()
+    {
+
+        foreach (GameObject selectedPlayer in selectedPlayers)
+            selectedPlayer.GetComponent<Capacity>().TryToUse();
     }
 
     void HandleClick()

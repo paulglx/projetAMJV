@@ -97,7 +97,7 @@ public class Attack : MonoBehaviour
 
     public GameObject GetTarget()
     {
-        return target ? target : null;
+        return target;
     }
 
     public void SetTarget(GameObject newTarget)
