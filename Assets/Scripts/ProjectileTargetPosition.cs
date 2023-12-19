@@ -66,7 +66,10 @@ public class ProjectileTargetPosition : MonoBehaviour
     public void setProjectile(Vector3 iniPosition, Vector3 targPosition, float dam)
     {
         initialPosition = iniPosition + new Vector3(0,1,0);
-        targetPosition = targPosition;
+        targetPosition = targPosition + new Vector3(0,1,0);
+        initialPosition.y = 1;
+        targetPosition.y = 1;
+
         damage = dam;
         transform.forward = targetPosition - iniPosition;
 
