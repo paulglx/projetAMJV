@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 1355391467611189933, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
       propertyPath: m_Name
       value: Ninja
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581084136994290610, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
+      propertyPath: range
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4581084136994290610, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
       propertyPath: cooldown
@@ -384,12 +388,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471275016}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 24.330847, y: 1, z: 23}
   m_LocalScale: {x: 6.1500044, y: 3.0433462, z: 0.37867}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2000926491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &514742312
 PrefabInstance:
@@ -924,6 +928,7 @@ Transform:
   - {fileID: 871752686}
   - {fileID: 2784660934324473688}
   - {fileID: 917711716}
+  - {fileID: 471275020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2000926492
@@ -939,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
@@ -1034,5 +1039,4 @@ SceneRoots:
   - {fileID: 1226621090}
   - {fileID: 179342018}
   - {fileID: 1889048602}
-  - {fileID: 471275020}
   - {fileID: 118540650}
