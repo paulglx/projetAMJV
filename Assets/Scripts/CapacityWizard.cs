@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class CapacityWizard : Capacity
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override bool Use(GameObject target)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public override void Use(GameObject target)
-    {
-        Debug.Log("I am a wizard and i use my capacity");
+        if (target)
+        {
+            Debug.Log("I am a wizard and i use my capacity on " + target.name);
+            return true;
+        }
+        else
+        {
+            Debug.Log("I am a wizard and i can't use my capacity because i have no target");
+            return false;
+        }
     }
 }
