@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  range: 0
-  wall: {fileID: 6565254655671531557, guid: 28e33e5886ea14a70ad66847755cf148, type: 3}
-  level: {fileID: 0}
+  range: 10
+  wall: {fileID: 3269595011722081549, guid: 46d686b94318a4b318f73c07797d0f4f, type: 3}
 --- !u!114 &6568713229870472121
 MonoBehaviour:
   m_ObjectHideFlags: 0
