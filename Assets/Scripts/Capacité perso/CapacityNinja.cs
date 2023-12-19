@@ -5,7 +5,7 @@ using UnityEngine;
 public class CapacityNinja : Capacity
 {
 
-    public override bool Use(GameObject target)
+    public override bool Use(GameObject target, Vector3 point)
     {
         if (target)
         {
