@@ -75,8 +75,10 @@ public class Attack : MonoBehaviour
     {
         if (attackType == AttackType.CONTACT)
             DoContactAttack(target);
-        else
+        else if (attackType == AttackType.REMOTE)
             DoRemoteAttack(target);
+        else if (attackType == AttackType.REMOTEAUTO)
+            DoRemoteAutoAttack(target);
     }
 
     void DoContactAttack(GameObject target)
@@ -93,6 +95,14 @@ public class Attack : MonoBehaviour
         GameObject newProjectile = Instantiate(projectile);
         ProjectileTargetPosition projectileAttack = newProjectile.GetComponent<ProjectileTargetPosition>();
         projectileAttack.setProjectile(transform.position, target.transform.position, damage);
+
+    }
+
+    void DoRemoteAutoAttack(GameObject target)
+    {
+        GameObject newProjectile = Instantiate(projectile);
+        ProjectileTargetEnnemy projectileAttack = newProjectile.GetComponent<ProjectileTargetEnnemy>();
+        projectileAttack.setProjectile(transform.position, target, damage);
 
     }
 

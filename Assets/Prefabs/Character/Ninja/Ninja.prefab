@@ -105,7 +105,7 @@ MonoBehaviour:
   target: {fileID: 0}
   attackDelay: 0.5
   attackType: 1
-  projectile: {fileID: 4504059049462895213, guid: 887f0a88049adbd2ab5f7288e8e4921e, type: 3}
+  projectile: {fileID: 4504059049462895213, guid: f773340d02628590a8bb338deba32bf1, type: 3}
 --- !u!136 &2364972922317528855
 CapsuleCollider:
   m_ObjectHideFlags: 0
