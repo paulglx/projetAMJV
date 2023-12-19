@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -34,6 +36,7 @@ public class Health : MonoBehaviour
     {
         Debug.Log("i take damage");
         health -= Mathf.Max(damage - shield, 0);
+
         if (health <= 0)
         {
             Die();
