@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
+  wall: {fileID: 6565254655671531557, guid: 28e33e5886ea14a70ad66847755cf148, type: 3}
+  wallDistance: 1
 --- !u!114 &6568713229870472121
 MonoBehaviour:
   m_ObjectHideFlags: 0

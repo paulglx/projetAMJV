@@ -22,18 +22,13 @@ public class SelectionManager : MonoBehaviour
         {
             HandleClick();
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            HandleCapacity();
-        }
     }
 
-    void HandleCapacity()
+    void HandleCapacity(Vector3 point)
     {
 
         foreach (GameObject selectedPlayer in selectedPlayers)
-            selectedPlayer.GetComponent<Capacity>().TryToUse();
+            selectedPlayer.GetComponent<Capacity>().TryToUse(point);
     }
 
     void HandleClick()
@@ -45,6 +40,13 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             GameObject target = hit.collider.gameObject;
+
+            // Capacity key is held : use capacity
+            if (Input.GetKey(KeyCode.A))
+            {
+                HandleCapacity(hit.point);
+                return;
+            }
 
             // A player is clicked : select it
             if (target.CompareTag("Player"))

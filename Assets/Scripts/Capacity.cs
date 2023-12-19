@@ -12,7 +12,7 @@ public abstract class Capacity : MonoBehaviour
 
     private Attack attack;
 
-    public abstract bool Use(GameObject target = null);
+    public abstract bool Use(GameObject target = null, Vector3 point = default);
 
     void Start()
     {
@@ -20,16 +20,16 @@ public abstract class Capacity : MonoBehaviour
         lastUseTime = Time.time;
     }
 
-    public void TryToUse()
+    public void TryToUse(Vector3 point)
     {
 
-        Debug.Log("I am " + gameObject.name + " and i try to use my capacity");
+        Debug.Log("I am " + gameObject.name + " and i try to use my capacity at " + point);
 
         if (Time.time - lastUseTime >= cooldown)
         {
             GameObject target = attack.GetTarget();
 
-            bool hasUsed = Use(target);
+            bool hasUsed = Use(target, point);
             if (hasUsed)
                 lastUseTime = Time.time;
         }
