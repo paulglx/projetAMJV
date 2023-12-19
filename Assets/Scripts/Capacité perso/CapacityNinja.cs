@@ -5,6 +5,16 @@ using UnityEngine;
 public class CapacityNinja : Capacity
 {
 
+    private MovementManager movementManager;
+
+    private Attack attack; 
+    // Start is called before the first frame update
+    void Start()
+    {
+        movementManager= GetComponent<MovementManager>();
+        attack = GetComponent<Attack>();
+    }
+
     public override bool Use(GameObject target, Vector3 point)
     {
         if (target)
@@ -27,6 +37,9 @@ public class CapacityNinja : Capacity
         Vector3 sauvtempo = transform.position;
         transform.position = target.transform.position ;
         target.transform.position = sauvtempo  ;
+        
+        movementManager.Stop();
+
 
     }
 

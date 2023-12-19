@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
+  range: 1
 --- !u!1 &8227634225079913645
 GameObject:
   m_ObjectHideFlags: 0
