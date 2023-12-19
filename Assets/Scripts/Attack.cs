@@ -71,11 +71,6 @@ public class Attack : MonoBehaviour
             navMeshAgent.stoppingDistance = 1;
     }
 
-    public void SetTarget(GameObject newTarget)
-    {
-        target = newTarget;
-    }
-
     void DoAttack(GameObject target)
     {
         if (attackType == AttackType.CONTACT)
@@ -99,6 +94,16 @@ public class Attack : MonoBehaviour
         ProjectileTargetPosition projectileAttack = newProjectile.GetComponent<ProjectileTargetPosition>();
         projectileAttack.setProjectile(transform.position, target.transform.position, damage);
 
+    }
+
+    public GameObject GetTarget()
+    {
+        return target ? target : null;
+    }
+
+    public void SetTarget(GameObject newTarget)
+    {
+        target = newTarget;
     }
 
     public float GetRange()
