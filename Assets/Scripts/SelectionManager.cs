@@ -24,6 +24,18 @@ public class SelectionManager : MonoBehaviour
         {
             HandleClick();
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Unselect();
+        }
+    }
+
+    void Unselect()
+    {
+        foreach (GameObject selectedPlayer in selectedPlayers)
+            UnsetSelectedColor(selectedPlayer);
+
+        selectedPlayers = new List<GameObject>();
     }
 
     void HandleCapacity(Vector3 point)
