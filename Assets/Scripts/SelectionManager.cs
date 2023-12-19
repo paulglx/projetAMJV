@@ -8,11 +8,13 @@ public class SelectionManager : MonoBehaviour
 {
 
     [SerializeField] private List<GameObject> selectedPlayers;
+    private Hashtable playersBaseColors;
 
     // Start is called before the first frame update
     void Start()
     {
         selectedPlayers = new List<GameObject>();
+        playersBaseColors = new Hashtable();
     }
 
     // Update is called once per frame
@@ -103,8 +105,18 @@ public class SelectionManager : MonoBehaviour
     void SetSelectedColor(GameObject player)
     {
 
-        Color selectionColor = new(0.0f, 0.9f, 0.0f);
         Material mat = player.GetComponentInChildren<Renderer>().material;
+
+
+        int playerId = player.GetInstanceID();
+
+        if (!playersBaseColors.ContainsKey(playerId))
+        {
+            Color oldColor = mat.GetColor("_Color");
+            playersBaseColors.Add(playerId, oldColor);
+        }
+
+        Color selectionColor = new(0.0f, 0.9f, 0.0f);
 
         mat.SetColor("_Color", selectionColor);
 
@@ -112,9 +124,11 @@ public class SelectionManager : MonoBehaviour
 
     void UnsetSelectedColor(GameObject player)
     {
-        Color selectionColor = new(1.0f, 1.0f, 1.0f);
+
+        Color oldColor = (Color)playersBaseColors[player.GetInstanceID()];
+
         Material mat = player.GetComponentInChildren<Renderer>().material;
 
-        mat.SetColor("_Color", selectionColor);
+        mat.SetColor("_Color", oldColor);
     }
 }
