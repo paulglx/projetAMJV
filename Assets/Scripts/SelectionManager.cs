@@ -26,9 +26,14 @@ public class SelectionManager : MonoBehaviour
 
     void HandleCapacity(Vector3 point)
     {
-
         foreach (GameObject selectedPlayer in selectedPlayers)
-            selectedPlayer.GetComponent<Capacity>().TryToUse(point);
+            selectedPlayer.GetComponent<Capacity>().TryToUse(null, point);
+    }
+
+    void HandleCapacity(GameObject target)
+    {
+        foreach (GameObject selectedPlayer in selectedPlayers)
+            selectedPlayer.GetComponent<Capacity>().TryToUse(target, target.transform.position);
     }
 
     void HandleClick()
@@ -44,7 +49,14 @@ public class SelectionManager : MonoBehaviour
             // Capacity key is held : use capacity
             if (Input.GetKey(KeyCode.A))
             {
-                HandleCapacity(hit.point);
+                if (target.CompareTag("Enemy"))
+                {
+                    HandleCapacity(target);
+                }
+                else
+                {
+                    HandleCapacity(hit.point);
+                }
                 return;
             }
 
