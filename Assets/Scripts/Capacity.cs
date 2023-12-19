@@ -8,7 +8,7 @@ public abstract class Capacity : MonoBehaviour
 
     [SerializeField] private float cooldown;
 
-    [SerializeField] private float range; 
+    [SerializeField] private float range;
 
     private float lastUseTime;
 
@@ -25,8 +25,8 @@ public abstract class Capacity : MonoBehaviour
         Debug.Log("I am " + gameObject.name + " and i try to use my capacity at " + point);
 
         if (Time.time - lastUseTime >= cooldown)
-        {   
-            if (isInRange(target,point))
+        {
+            if (isInRange(target, point))
             {
                 bool hasUsed = Use(target, point);
                 if (hasUsed)
@@ -34,7 +34,7 @@ public abstract class Capacity : MonoBehaviour
             }
 
         }
-        else 
+        else
         {
             Debug.Log("I can't use yet my capacity ");
         }
@@ -46,22 +46,22 @@ public abstract class Capacity : MonoBehaviour
         if (target != null)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance<= range)
+            if (distance <= range)
             {
-                return true ;
-            }
-        }        
-
-        if (point != null )
-        {
-            float distance = Vector3.Distance(point, transform.position);
-            if (distance<= range)
-            {
-                return true ;
+                return true;
             }
         }
 
-        return false ;
+        if (point != null)
+        {
+            float distance = Vector3.Distance(point, transform.position);
+            if (distance <= range)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
