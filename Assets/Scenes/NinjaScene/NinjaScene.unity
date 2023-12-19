@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ninja
       objectReference: {fileID: 0}
+    - target: {fileID: 4581084136994290610, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8060343517458026420, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.1
