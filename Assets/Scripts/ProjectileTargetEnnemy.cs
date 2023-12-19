@@ -56,7 +56,7 @@ public class ProjectileTargetEnnemy : MonoBehaviour
     private void moveProjectile()
     {
         
-        transform.position = Vector3.MoveTowards(transform.position, targetEnnemy.transform.position, speed* Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetEnnemy.transform.position + new Vector3(0,1-targetEnnemy.transform.position.y,0), speed* Time.deltaTime);
 
         if (transform.position == targetEnnemy.transform.position)
         {
@@ -65,7 +65,7 @@ public class ProjectileTargetEnnemy : MonoBehaviour
         }
 
         targetPosition = targetEnnemy.transform.position;
-        transform.forward = targetEnnemy.transform.position - transform.position;
+        transform.forward = targetEnnemy.transform.position + new Vector3(0,1-targetEnnemy.transform.position.y,0) - transform.position;
     }
 
 
@@ -95,8 +95,9 @@ public class ProjectileTargetEnnemy : MonoBehaviour
     
     public void setProjectile(Vector3 iniPosition, GameObject targEnnemy, float dam)
     {
-        initialPosition = iniPosition + new Vector3(0,1,0);
+        initialPosition = iniPosition;
         targetEnnemy = targEnnemy;
+        initialPosition.y = 1;
         damage = dam;
         transform.forward = targetEnnemy.transform.position - iniPosition;
 
