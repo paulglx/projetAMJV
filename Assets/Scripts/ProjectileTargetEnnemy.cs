@@ -9,7 +9,7 @@ public class ProjectileTargetEnnemy : MonoBehaviour
     private Vector3 initialPosition; 
     [SerializeField] private float speed;
 
-    [SerializeField] private float damage;
+    private float damage;
     
     [SerializeField] private Vector3 targetPosition;
 
@@ -47,8 +47,9 @@ public class ProjectileTargetEnnemy : MonoBehaviour
         {
             Debug.Log("arriver");
             Destroy(gameObject);
-        
-    }
+        }
+
+
 
     }
 
@@ -64,6 +65,7 @@ public class ProjectileTargetEnnemy : MonoBehaviour
         }
 
         targetPosition = targetEnnemy.transform.position;
+        transform.forward = targetEnnemy.transform.position - transform.position;
     }
 
 
