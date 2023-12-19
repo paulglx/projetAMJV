@@ -4,38 +4,44 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+
+    [SerializeField] private float movementSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement();
-        
+        Movement();
     }
 
-    public void movement()
+    public void Movement()
     {
+
+        Vector3 direction = Vector3.zero;
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-1f,0f,0f);
+            direction += new Vector3(-1f, 0f, 0f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(1f,0f,0f);
+            direction += new Vector3(1f, 0f, 0f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0f,0f,1f);
+            direction += new Vector3(0f, 0f, 1f);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0f,0f,-1f);
+            direction += new Vector3(0f, 0f, -1f);
         }
 
+        transform.position += direction * movementSpeed * Time.deltaTime;
     }
 
 
