@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7695916965549671304}
   - component: {fileID: 6437259177090069429}
   - component: {fileID: 5436241530677658315}
+  - component: {fileID: 5826480784536264562}
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   m_Layer: 0
@@ -87,6 +88,19 @@ MonoBehaviour:
   health: 0
   shield: 1
   isAlive: 1
+--- !u!114 &5826480784536264562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efbd4627825249c4806a089d453a86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
 --- !u!114 &6568713229870472121
 MonoBehaviour:
   m_ObjectHideFlags: 0

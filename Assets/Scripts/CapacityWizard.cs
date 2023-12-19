@@ -15,4 +15,9 @@ public class CapacityWizard : Capacity
     {
 
     }
+
+    public override void Use(GameObject target)
+    {
+        Debug.Log("I am a wizard and i use my capacity");
+    }
 }

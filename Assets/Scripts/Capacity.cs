@@ -9,10 +9,13 @@ public abstract class Capacity : MonoBehaviour
 
     private float lastUseTime;
 
-    public abstract void Use();
+    public abstract void Use(GameObject target = null);
+
+    public Attack attack;
 
     void Start()
     {
+        attack = GetComponent<Attack>();
         lastUseTime = Time.time;
     }
 
@@ -20,7 +23,7 @@ public abstract class Capacity : MonoBehaviour
     {
         if (Time.time - lastUseTime >= cooldown)
         {
-            Use();
+            Use(attack.GetTarget());
             lastUseTime = Time.time;
         }
     }
