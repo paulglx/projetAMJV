@@ -16,7 +16,8 @@ public class Attack : MonoBehaviour
     enum AttackType
     {
         CONTACT,
-        REMOTE
+        REMOTE,
+        REMOTEAUTO
     }
 
     IEnumerator AttackLoop()
