@@ -9,7 +9,7 @@ public class ProjectileTargetPosition : MonoBehaviour
     private Vector3 initialPosition; 
     [SerializeField] private float speed;
 
-    [SerializeField] private float damage;
+    private float damage;
     
 
     // Start is called before the first frame update
