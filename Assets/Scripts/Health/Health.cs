@@ -7,18 +7,28 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float health;
 
-    [SerializeField] private float shield;
 
     [SerializeField] private bool isAlive;
+    [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float shield;
+    [SerializeField] private GameObject healthBarPrefab;
+    [SerializeField] private Vector3 healthBarPosition;
+    private GameObject healthBar;
+    private HealthBarManager healthBarManager;
 
     // Start is called before the first frame update
     void Start()
     {
         isAlive = true;
         health = maxHealth;
+
+        // Instantiate Health bar prefab inside parent
+        healthBar = Instantiate(healthBarPrefab, gameObject.transform);
+        healthBar.transform.Translate(healthBarPosition);
+
+        healthBarManager = healthBar.GetComponent<HealthBarManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +40,8 @@ public class Health : MonoBehaviour
     public void Heal(float healthPoints)
     {
         health += Mathf.Min(maxHealth, health + healthPoints);
+
+        healthBarManager.UpdateHealthbar();
     }
 
     public void ApplyDamage(float damage)
@@ -41,6 +53,8 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+
+        healthBarManager.UpdateHealthbar();
     }
 
     void Die()
@@ -48,5 +62,15 @@ public class Health : MonoBehaviour
         isAlive = false;
         Debug.Log("I am " + gameObject.name + " and i'm dead");
         Destroy(gameObject);
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 }
