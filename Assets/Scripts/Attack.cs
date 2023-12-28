@@ -94,7 +94,7 @@ public class Attack : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile);
         ProjectileTargetPosition projectileAttack = newProjectile.GetComponent<ProjectileTargetPosition>();
-        projectileAttack.setProjectile(transform.position, target.transform.position, damage);
+        projectileAttack.SetProjectile(transform.position, target.transform.position, damage);
 
     }
 
@@ -102,7 +102,7 @@ public class Attack : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile);
         ProjectileTargetEnnemy projectileAttack = newProjectile.GetComponent<ProjectileTargetEnnemy>();
-        projectileAttack.setProjectile(transform.position, target, damage);
+        projectileAttack.SetProjectile(transform.position, target, damage);
 
     }
 

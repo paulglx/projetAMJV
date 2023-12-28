@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class ProjectileTargetEnnemy : MonoBehaviour
 {
-    
-    private GameObject targetEnnemy; 
-    private Vector3 initialPosition; 
+
+    private GameObject targetEnnemy;
+    private Vector3 initialPosition;
     [SerializeField] private float speed;
 
     private float damage;
-    
+
     [SerializeField] private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = initialPosition; 
-        
+        transform.position = initialPosition;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (targetEnnemy==null)
+        if (targetEnnemy == null)
         {
-            moveToPosition();
+            MoveToPosition();
         }
         else
         {
-            moveProjectile();
+            MoveProjectile();
         }
-        
 
-        
+
+
     }
 
 
-    private void moveToPosition()
+    private void MoveToPosition()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed* Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         if (transform.position == targetPosition)
         {
@@ -53,10 +53,10 @@ public class ProjectileTargetEnnemy : MonoBehaviour
 
     }
 
-    private void moveProjectile()
+    private void MoveProjectile()
     {
-        
-        transform.position = Vector3.MoveTowards(transform.position, targetEnnemy.transform.position + new Vector3(0,1-targetEnnemy.transform.position.y,0), speed* Time.deltaTime);
+
+        transform.position = Vector3.MoveTowards(transform.position, targetEnnemy.transform.position + new Vector3(0, 1 - targetEnnemy.transform.position.y, 0), speed * Time.deltaTime);
 
         if (transform.position == targetEnnemy.transform.position)
         {
@@ -65,20 +65,20 @@ public class ProjectileTargetEnnemy : MonoBehaviour
         }
 
         targetPosition = targetEnnemy.transform.position;
-        transform.forward = targetEnnemy.transform.position + new Vector3(0,1-targetEnnemy.transform.position.y,0) - transform.position;
+        transform.forward = targetEnnemy.transform.position + new Vector3(0, 1 - targetEnnemy.transform.position.y, 0) - transform.position;
     }
 
 
 
 
-    void OnTriggerEnter(Collider other) 
+    void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger");
         Health targetHealth = other.GetComponent<Health>();
         //Pas de tir allié
         if (other.CompareTag("Player"))
         {
-            
+
         }
         else if (targetHealth)
         {
@@ -91,9 +91,9 @@ public class ProjectileTargetEnnemy : MonoBehaviour
             Debug.Log("Je me suis cogner");
             Destroy(gameObject);
         }
-    } 
-    
-    public void setProjectile(Vector3 iniPosition, GameObject targEnnemy, float dam)
+    }
+
+    public void SetProjectile(Vector3 iniPosition, GameObject targEnnemy, float dam)
     {
         initialPosition = iniPosition;
         targetEnnemy = targEnnemy;
