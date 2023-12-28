@@ -143,6 +143,14 @@ PrefabInstance:
       propertyPath: cooldown
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5436241530677658315, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
+    - target: {fileID: 5436241530677658315, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
+      propertyPath: healthBarPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8060343517458026420, guid: 17878ecc82f6e8798b1e2bcdc565aa85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.3
@@ -196,6 +204,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6131796923175640772, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -789,6 +805,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6131796923175640772, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -846,6 +870,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
+    - target: {fileID: 1647310045097907736, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
+      propertyPath: healthBarPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6131796923175640772, guid: 15286fac3c1c04bb091bddf588f6359b, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
