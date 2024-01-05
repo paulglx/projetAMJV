@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5436241530677658315}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 7047937411209567091}
+  - component: {fileID: 1807049841726466866}
   m_Layer: 0
   m_Name: Dog Trainer
   m_TagString: Player
@@ -50,7 +51,7 @@ NavMeshAgent:
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355391467611189933}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
@@ -130,6 +131,22 @@ MonoBehaviour:
   attackDelay: 1
   attackType: 0
   projectile: {fileID: 0}
+--- !u!114 &1807049841726466866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938413076c9eb47bfb84e621bc82fbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogs: []
+  maxDogs: 2
+  dogPrefab: {fileID: 1355391467611189933, guid: 5a5859ffbb1084e85a9dd194b81e1336, type: 3}
+  spawnDistance: 1
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

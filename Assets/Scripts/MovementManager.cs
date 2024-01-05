@@ -20,7 +20,8 @@ public class MovementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("ForwardSpeed", agent.velocity.magnitude / 5f);
+        if (animator)
+            animator.SetFloat("ForwardSpeed", agent.velocity.magnitude / 5f);
     }
 
     public void GoToPoint(Vector3 point)
