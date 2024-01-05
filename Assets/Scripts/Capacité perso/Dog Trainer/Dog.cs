@@ -5,10 +5,10 @@ using UnityEngine;
 public class Dog : MonoBehaviour
 {
 
+    [SerializeField] private bool isLost;
     [SerializeField] private GameObject dogTrainer;
     private Attack attack;
     private MovementManager movementManager;
-    [SerializeField] private bool isLost;
 
     // Start is called before the first frame update
     void Start()

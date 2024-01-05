@@ -7,10 +7,10 @@ public class CapacityDogTrainer : MonoBehaviour
 
     // Also replaces Attack for the DogTrainer
 
+    [SerializeField] private float spawnDistance;
+    [SerializeField] private GameObject dogPrefab;
     [SerializeField] private List<GameObject> dogs;
     [SerializeField] private uint maxDogs;
-    [SerializeField] private GameObject dogPrefab;
-    [SerializeField] private float spawnDistance;
 
     // Start is called before the first frame update
     void Start()

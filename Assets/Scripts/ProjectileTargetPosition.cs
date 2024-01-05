@@ -5,11 +5,11 @@ using UnityEngine;
 public class ProjectileTargetPosition : MonoBehaviour
 {
 
-    private Vector3 targetPosition;
-    private Vector3 initialPosition;
-    [SerializeField] private float speed;
 
+    [SerializeField] private float speed;
     private float damage;
+    private Vector3 initialPosition;
+    private Vector3 targetPosition;
 
 
     // Start is called before the first frame update
