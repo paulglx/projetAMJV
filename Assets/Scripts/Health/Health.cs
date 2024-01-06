@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
 
 
 
+    [SerializeField] private bool forceDamage;
     [SerializeField] private bool isAlive;
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
@@ -37,9 +38,18 @@ public class Health : MonoBehaviour
 
     }
 
+    private void OnValidate()
+    {
+        if (forceDamage)
+        {
+            ApplyDamage(10);
+            forceDamage = false;
+        }
+    }
+
     public void Heal(float healthPoints)
     {
-        health += Mathf.Min(maxHealth, health + healthPoints);
+        health = Mathf.Min(health + healthPoints, maxHealth);
 
         healthBarManager.UpdateHealthbar();
     }
