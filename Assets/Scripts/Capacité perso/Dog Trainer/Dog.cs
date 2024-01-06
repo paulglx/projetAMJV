@@ -27,17 +27,18 @@ public class Dog : MonoBehaviour
             return;
         }
 
-        if (attack.GetTarget() == null)
-        {
-            movementManager.GoToPoint(dogTrainer.transform.position);
-        }
-
         if (!isLost)
         {
             if (dogTrainer == null)
             {
                 isLost = true;
+                return;
             }
+        }
+
+        if (attack.GetTarget() == null)
+        {
+            movementManager.GoToPoint(dogTrainer.transform.position);
         }
     }
 
