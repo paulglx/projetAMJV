@@ -84,10 +84,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267264bab55b494da73eeadb64405dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
-  shield: 0
+  forceDamage: 0
   isAlive: 1
+  health: 0
+  maxHealth: 100
+  shield: 0
+  healthBarPrefab: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
+  healthBarPosition: {x: 0, y: 2.4, z: 0}
 --- !u!114 &6568713229870472121
 MonoBehaviour:
   m_ObjectHideFlags: 0

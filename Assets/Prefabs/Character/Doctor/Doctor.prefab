@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7695916965549671304}
   - component: {fileID: 6437259177090069429}
   - component: {fileID: 5436241530677658315}
-  - component: {fileID: 5826480784536264562}
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
+  - component: {fileID: 8904496962369187938}
   m_Layer: 0
   m_Name: Doctor
   m_TagString: Player
@@ -84,27 +84,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267264bab55b494da73eeadb64405dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceDamage: 0
   isAlive: 1
   health: 0
   maxHealth: 140
   shield: 0
   healthBarPrefab: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
   healthBarPosition: {x: 0, y: 2.4, z: 0}
---- !u!114 &5826480784536264562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355391467611189933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1efbd4627825249c4806a089d453a86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 2
-  range: 10
-  wall: {fileID: 3269595011722081549, guid: 46d686b94318a4b318f73c07797d0f4f, type: 3}
 --- !u!114 &6568713229870472121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +132,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8904496962369187938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867b836af70f5445c8ec8f5230615889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  range: 10
+  canBeUsedOnPlayer: 1
+  healAmount: 25
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0
