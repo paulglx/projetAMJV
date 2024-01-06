@@ -359,6 +359,14 @@ PrefabInstance:
       value: Dog Trainer
       objectReference: {fileID: 0}
     - target: {fileID: 1807049841726466866, guid: 98193d908606443b89d398e2672e306c, type: 3}
+      propertyPath: range
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807049841726466866, guid: 98193d908606443b89d398e2672e306c, type: 3}
+      propertyPath: cooldown
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807049841726466866, guid: 98193d908606443b89d398e2672e306c, type: 3}
       propertyPath: spawnDistance
       value: 1
       objectReference: {fileID: 0}
