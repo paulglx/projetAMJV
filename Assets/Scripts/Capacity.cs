@@ -7,8 +7,8 @@ public abstract class Capacity : MonoBehaviour
 {
 
     [SerializeField] private float cooldown;
-
     [SerializeField] private float range;
+    [SerializeField] private bool canBeUsedOnPlayer = false;
 
     private float lastUseTime;
 
@@ -22,7 +22,11 @@ public abstract class Capacity : MonoBehaviour
     public void TryToUse(GameObject target, Vector3 point)
     {
 
-        Debug.Log("I am " + gameObject.name + " and i try to use my capacity at " + point);
+        if (target != null && target.CompareTag("Player") && !canBeUsedOnPlayer)
+        {
+            Debug.Log("I can't use my capacity on a player");
+            return;
+        }
 
         if (Time.time - lastUseTime >= cooldown)
         {
@@ -36,7 +40,7 @@ public abstract class Capacity : MonoBehaviour
         }
         else
         {
-            Debug.Log("I can't use yet my capacity ");
+            Debug.Log("I can use my capacity in " + (cooldown - (Time.time - lastUseTime)) + " seconds");
         }
     }
 

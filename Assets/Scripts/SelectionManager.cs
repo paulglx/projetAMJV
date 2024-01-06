@@ -63,7 +63,7 @@ public class SelectionManager : MonoBehaviour
             // Capacity key is held : use capacity
             if (Input.GetKey(KeyCode.A))
             {
-                if (target.CompareTag("Enemy"))
+                if (target.CompareTag("Enemy") || target.CompareTag("Player"))
                 {
                     HandleCapacity(target);
                 }
