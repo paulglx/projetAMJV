@@ -98,19 +98,27 @@ public class SelectionManager : MonoBehaviour
             // Something with health is clicked : attack it
             else if (target.GetComponent<Health>())
             {
-                foreach (GameObject selectedPlayer in selectedPlayers)
-                    selectedPlayer.GetComponent<Attack>().SetTarget(target);
+                AttackTarget(target);
             }
             // Another object is clicked : move there
             else
             {
-                foreach (GameObject selectedPlayer in selectedPlayers)
-                    selectedPlayer.GetComponent<Attack>().SetTarget(null);
+                AttackTarget(null);
 
                 Vector3 point = hit.point;
                 foreach (GameObject selectedPlayer in selectedPlayers)
                     selectedPlayer.GetComponent<MovementManager>().GoToPoint(point);
             }
+        }
+    }
+
+    void AttackTarget(GameObject target)
+    {
+        foreach (GameObject selectedPlayer in selectedPlayers)
+        {
+            Attack attack = selectedPlayer.GetComponent<Attack>();
+            if (attack)
+                attack.SetTarget(target);
         }
     }
 
