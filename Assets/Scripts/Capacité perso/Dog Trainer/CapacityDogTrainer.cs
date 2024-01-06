@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CapacityDogTrainer : MonoBehaviour
+public class CapacityDogTrainer : Capacity
 {
 
     // Also replaces Attack for the DogTrainer
@@ -21,24 +21,24 @@ public class CapacityDogTrainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SpawnDog();
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             HandleClick();
         }
     }
 
-    void SpawnDog()
+    public override bool Use(GameObject target = null, Vector3 point = default)
     {
         if (dogs.Count < maxDogs)
         {
             GameObject newDog = Instantiate(dogPrefab, transform.position + transform.forward * spawnDistance, transform.rotation);
             dogs.Add(newDog);
             newDog.GetComponent<Dog>().SetDogTrainer(gameObject);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
