@@ -45,21 +45,26 @@ public class CapacityDogTrainer : Capacity
     void HandleClick()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
         {
-            if (hit.collider.gameObject.tag == "Enemy")
+            if (hit.collider.gameObject.CompareTag("Enemy"))
             {
-                SetTarget(hit.collider.gameObject);
+                SetDogsTarget(hit.collider.gameObject);
             }
         }
     }
 
-    void SetTarget(GameObject target)
+    void SetDogsTarget(GameObject target)
     {
         foreach (GameObject dog in dogs)
         {
+            if (!dog)
+            {
+                dogs.Remove(dog);
+                continue;
+            }
+
             dog.GetComponent<Attack>().SetTarget(target);
         }
     }
