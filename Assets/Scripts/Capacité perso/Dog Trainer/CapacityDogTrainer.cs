@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CapacityDogTrainer : Capacity
@@ -57,13 +58,12 @@ public class CapacityDogTrainer : Capacity
 
     void SetDogsTarget(GameObject target)
     {
-        foreach (GameObject dog in dogs)
+
+        // Remove dogs if they are dead
+        dogs = dogs.Where(dog => dog != null).ToList();
+
+        foreach (GameObject dog in dogs.ToList())
         {
-            if (!dog)
-            {
-                dogs.Remove(dog);
-                continue;
-            }
 
             dog.GetComponent<Attack>().SetTarget(target);
         }
