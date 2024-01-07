@@ -9,8 +9,8 @@ public class Health : MonoBehaviour
 
 
 
-    [SerializeField] private bool forceDamage;
     [SerializeField] private bool isAlive;
+    [SerializeField] private bool forceDamage;
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
     [SerializeField] private float shield;
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isAlive = true;
+//        isAlive = true;
         health = maxHealth;
 
         // Instantiate Health bar prefab inside parent
@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
     }
 
     private void OnValidate()
@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        isAlive = false;
+//        isAlive = false;
         Debug.Log("I am " + gameObject.name + " and i'm dead");
         Destroy(gameObject);
     }

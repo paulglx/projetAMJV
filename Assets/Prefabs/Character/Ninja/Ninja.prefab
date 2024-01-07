@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 4581084136994290610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ninja
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -209,6 +209,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
       propertyPath: m_Name
       value: SamuraiHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
