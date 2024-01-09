@@ -47,18 +47,11 @@ public class SelectionManager : MonoBehaviour
     {
         if (selectedPlayers.Count == 0)
         {
-            descriptionManager.Hide();
+            descriptionManager.Unselect();
         }
         else
         {
-            Description description = selectedPlayers[0].GetComponent<Description>();
-            if (description)
-                descriptionManager.UpdateDescription(description);
-            else
-            {
-                Debug.LogWarning("Selected player has no description");
-                descriptionManager.Hide();
-            }
+            descriptionManager.Select(selectedPlayers[0]);
         }
     }
 
