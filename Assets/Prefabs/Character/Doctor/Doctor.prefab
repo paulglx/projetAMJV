@@ -147,8 +147,13 @@ MonoBehaviour:
   cooldown: 3
   range: 10
   canBeUsedOnPlayer: 1
+  forceEnrage: 0
   healAmount: 25
+  rageDuration: 5
+  rageMultiplier: 1.5
   healEffect: {fileID: 493906058188617972, guid: 8fc16f8d89c054f9db824b45110cc131, type: 3}
+  rageEffect: {fileID: 8853450454537726128, guid: 436cb31ce87934e60868a69161fab7be, type: 3}
+  customers: []
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

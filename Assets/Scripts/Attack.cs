@@ -120,4 +120,19 @@ public class Attack : MonoBehaviour
     {
         return range;
     }
+
+    public void SetRange(float newRange)
+    {
+        range = newRange;
+    }
+
+    public float GetDamage()
+    {
+        return damage;
+    }
+
+    public void SetDamage(float newDamage)
+    {
+        damage = newDamage;
+    }
 }
