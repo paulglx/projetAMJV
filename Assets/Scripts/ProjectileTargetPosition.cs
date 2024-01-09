@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ProjectileTargetPosition : MonoBehaviour
 {
@@ -17,48 +18,41 @@ public class ProjectileTargetPosition : MonoBehaviour
     {
         transform.position = initialPosition;
 
+        // Vérification des composants
+        Assert.IsNotNull(GetComponent<Rigidbody>(), "The projectile needs a rigidbody");
+        Assert.IsNotNull(GetComponent<Collider>(), "The projectile needs a trigger collider");
+        Assert.IsTrue(GetComponent<Collider>().isTrigger, "The projectile collider needs to be a trigger");
     }
 
     // Update is called once per frame
     void Update()
     {
-
         MoveProjectile();
-
     }
 
 
     private void MoveProjectile()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        if (transform.position == targetPosition)
-        {
-            Debug.Log("arriver");
-            Destroy(gameObject);
-        }
+        transform.position += speed * Time.deltaTime * transform.forward;
     }
 
 
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
         Health targetHealth = other.GetComponent<Health>();
         //Pas de tir allié
         if (other.CompareTag("Player"))
         {
-
+            return;
         }
         else if (targetHealth)
         {
             targetHealth.ApplyDamage(damage);
-            Debug.Log("J'ai fait des dégats");
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Je me suis cogner");
             Destroy(gameObject);
         }
     }
@@ -71,7 +65,7 @@ public class ProjectileTargetPosition : MonoBehaviour
         targetPosition.y = 1;
 
         damage = dam;
-        transform.forward = targetPosition - iniPosition;
+        transform.forward = targetPosition - initialPosition;
 
     }
 

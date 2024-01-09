@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ProjectileTargetEnnemy : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class ProjectileTargetEnnemy : MonoBehaviour
     {
         transform.position = initialPosition;
 
+        // Vérification des composants
+        Assert.IsNotNull(GetComponent<Rigidbody>(), "The projectile needs a rigidbody");
+        Assert.IsNotNull(GetComponent<Collider>(), "The projectile needs a trigger collider");
+        Assert.IsTrue(GetComponent<Collider>().isTrigger, "The projectile collider needs to be a trigger");
     }
 
     // Update is called once per frame
