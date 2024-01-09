@@ -13,18 +13,24 @@ public class IdleState : IEnemyState
 
     public override void EnterState()
     {
-        // Mettre en œuvre l'état Idle
-        // Par exemple, arrêter l'ennemi, jouer une animation, etc.
+
+        enemy.StartCoroutine(WaitAndSwitchState(enemy));
     }
 
     public override void UpdateState()
     {
-        // Vérifier si l'ennemi doit passer à l'état de patrouille (WalkState)
 
     }
 
     public override void ExitState()
     {
-        // Nettoyer ou effectuer des actions de transition
+
+    }
+
+    IEnumerator WaitAndSwitchState(EnemyController enemy)
+    {
+        yield return new WaitForSeconds(enemy.GetidleDuration());
+        Debug.Log("Fini");
+        enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB(), enemy.GetpointA() ));
     }
 }

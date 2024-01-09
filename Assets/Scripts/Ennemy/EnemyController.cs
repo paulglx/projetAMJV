@@ -64,7 +64,6 @@ public class EnemyController : MonoBehaviour
 
     public float GetidleDuration()
     {
-
         return idleDuration;
     }
 
@@ -75,6 +74,27 @@ public class EnemyController : MonoBehaviour
             return true ;
         }
         return false;
+    }
+
+
+    public Vector3 GetpointA()
+    {
+        return pointA;
+
+    }
+
+    public Vector3 GetpointB()
+    {
+        return pointB;
+
+    }
+
+
+    IEnumerator WaitAndSwitchState(EnemyController enemy)
+    {
+        yield return new WaitForSeconds(enemy.GetidleDuration());
+        Debug.Log("Fini");
+        enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB(), enemy.GetpointA() ));
     }
 
 

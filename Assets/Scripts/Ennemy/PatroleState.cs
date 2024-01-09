@@ -32,7 +32,6 @@ public class PatroleState : IEnemyState
         if (enemy.isArrived(targetB))
         {
             enemy.TransitionToState(new IdleState(enemy));
-            enemy.StartCoroutine(WaitAndSwitchState(enemy));
         }
 
     }
@@ -43,10 +42,5 @@ public class PatroleState : IEnemyState
         enemy.SwitchPatrole();
     }
 
-    IEnumerator WaitAndSwitchState(EnemyController enemy)
-    {
-        yield return new WaitForSeconds(enemy.GetidleDuration());
-        Debug.Log("Fini");
-        enemy.TransitionToState(new PatroleState(enemy, targetB, targetA));
-    }
+
 }
