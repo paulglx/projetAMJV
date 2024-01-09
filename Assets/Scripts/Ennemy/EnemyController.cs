@@ -5,23 +5,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    //public float walkSpeed = 3f;
+    readonly private LayerMask enemyLayer;
+    [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
-
-    private IEnemyState currentState;
     [SerializeField] private float idleDuration = 3f;
-    [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float detectionRadius = 10f; 
     private bool isChasing = false;
-
+    private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
 
     private void Start()
     {
         Debug.Log("EnemyController Start Je suis " + pointA);
-        currentState = new PatroleState(this, pointA, pointB);
+        currentState = new PatroleState(this, pointB);
         currentState.EnterState();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
@@ -91,26 +89,6 @@ public class EnemyController : MonoBehaviour
         return pointB;
 
     }
-
-
-    IEnumerator WaitAndSwitchState(EnemyController enemy)
-    {
-        yield return new WaitForSeconds(enemy.GetidleDuration());
-        Debug.Log("Fini");
-        enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB(), enemy.GetpointA() ));
-    }
-
-
-/**
-    private void private void OnDrawGizmosSelected() 
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);      
-
-
-    }
-
-**/
 
 
 }

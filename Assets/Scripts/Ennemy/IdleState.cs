@@ -13,7 +13,6 @@ public class IdleState : IEnemyState
 
     public override void EnterState()
     {
-
         enemy.StartCoroutine(WaitAndSwitchState(enemy));
     }
 
@@ -30,7 +29,6 @@ public class IdleState : IEnemyState
     IEnumerator WaitAndSwitchState(EnemyController enemy)
     {
         yield return new WaitForSeconds(enemy.GetidleDuration());
-        Debug.Log("Fini");
-        enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB(), enemy.GetpointA() ));
+        enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB()));
     }
 }
