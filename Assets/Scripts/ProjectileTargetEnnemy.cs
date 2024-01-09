@@ -78,24 +78,18 @@ public class ProjectileTargetEnnemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
-        Health targetHealth = other.GetComponent<Health>();
         //Pas de tir allié
         if (other.CompareTag("Player"))
         {
-
+            return;
         }
-        else if (targetHealth)
+
+        Health targetHealth = other.GetComponent<Health>();
+        if (targetHealth)
         {
             targetHealth.ApplyDamage(damage);
-            Debug.Log("J'ai fait des dégats");
-            Destroy(gameObject);
         }
-        else
-        {
-            Debug.Log("Je me suis cogner");
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     public void SetProjectile(Vector3 iniPosition, GameObject targEnnemy, float dam)

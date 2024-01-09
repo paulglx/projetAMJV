@@ -5,8 +5,6 @@ using UnityEngine.Assertions;
 
 public class ProjectileTargetPosition : MonoBehaviour
 {
-
-
     [SerializeField] private float speed;
     private float damage;
     private Vector3 initialPosition;
@@ -40,25 +38,23 @@ public class ProjectileTargetPosition : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Health targetHealth = other.GetComponent<Health>();
-        //Pas de tir allié
-        if (other.CompareTag("Player"))
+        // Ignore collisions with players
+        if (other.gameObject.CompareTag("Player"))
         {
             return;
         }
-        else if (targetHealth)
+
+        Health targetHealth = other.GetComponent<Health>();
+        if (targetHealth)
         {
             targetHealth.ApplyDamage(damage);
-            Destroy(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     public void SetProjectile(Vector3 iniPosition, Vector3 targPosition, float dam)
     {
+
         initialPosition = iniPosition + new Vector3(0, 1, 0);
         targetPosition = targPosition + new Vector3(0, 1, 0);
         initialPosition.y = 1;
@@ -66,7 +62,5 @@ public class ProjectileTargetPosition : MonoBehaviour
 
         damage = dam;
         transform.forward = targetPosition - initialPosition;
-
     }
-
 }
