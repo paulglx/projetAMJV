@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 4581084136994290610}
+  - component: {fileID: 8317025884679301491}
   m_Layer: 6
   m_Name: Ninja
   m_TagString: Player
@@ -84,8 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267264bab55b494da73eeadb64405dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceDamage: 0
   isAlive: 1
+  forceDamage: 0
   health: 0
   maxHealth: 100
   shield: 0
@@ -146,6 +147,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   range: 1
+  canBeUsedOnPlayer: 0
+--- !u!114 &8317025884679301491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dcb42634b954dd49dc6e87d38fbedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Ninja
+  description: "He is very fast and shoots katanas at enemies.\t"
+  capacityDescription: swap positions with an enemy.
 --- !u!1001 &6184751714021476011
 PrefabInstance:
   m_ObjectHideFlags: 0
