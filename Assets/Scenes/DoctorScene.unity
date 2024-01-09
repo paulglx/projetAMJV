@@ -135,6 +135,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ennemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5039703961934524479, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
+      propertyPath: pointA.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039703961934524479, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
+      propertyPath: pointB.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039703961934524479, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
+      propertyPath: detectionRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8060343517458026420, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19200253

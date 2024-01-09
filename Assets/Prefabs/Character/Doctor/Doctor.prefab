@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267264bab55b494da73eeadb64405dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceDamage: 0
   isAlive: 1
+  forceDamage: 0
   health: 0
   maxHealth: 140
   shield: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   range: 10
   canBeUsedOnPlayer: 1
   healAmount: 25
+  healEffect: {fileID: 493906058188617972, guid: 8fc16f8d89c054f9db824b45110cc131, type: 3}
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

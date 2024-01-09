@@ -6,6 +6,7 @@ public class CapacityDoctor : Capacity
 {
 
     [SerializeField] private float healAmount;
+    [SerializeField] private GameObject healEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class CapacityDoctor : Capacity
         if (targetHealth && !target.CompareTag("Enemy"))
         {
             targetHealth.Heal(healAmount);
+            Instantiate(healEffect, target.transform.position, Quaternion.identity, target.transform);
             return true;
         }
         else
