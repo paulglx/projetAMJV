@@ -14,6 +14,7 @@ public class MovementManager : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        Debug.Log("Je suis dans le Start de " + this.gameObject);
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -29,6 +30,8 @@ public class MovementManager : MonoBehaviour
         //Je ne sais pas pourquoi en faisant le State Machine ca faisait une erreur, le agent est null comme si le start n'était pas call 
         // Ma théorie c'est que ca lance le script EnemyController en premier et vu que dans enemyController on appel GoToPoint peut etre que la méthode Start n'est pas fait 
 
+        //Théorie validé il faut en parler au prof
+        
         if (agent)
         {
             Debug.Log("Il y avait un agent");
@@ -38,7 +41,7 @@ public class MovementManager : MonoBehaviour
         {
             agent = GetComponent<NavMeshAgent>();
             agent.SetDestination(point);
-            Debug.Log("Il y avait pas d'agent");
+            Debug.Log("Il y avait pas d'agent dans "+ this.gameObject);
         }
 
     }
