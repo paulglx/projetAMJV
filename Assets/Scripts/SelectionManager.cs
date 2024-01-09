@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 
 public class SelectionManager : MonoBehaviour
@@ -9,12 +10,16 @@ public class SelectionManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> selectedPlayers;
     private Hashtable playersBaseColors;
+    private DescriptionManager descriptionManager;
 
     // Start is called before the first frame update
     void Start()
     {
         selectedPlayers = new List<GameObject>();
         playersBaseColors = new Hashtable();
+        descriptionManager = FindAnyObjectByType<DescriptionManager>();
+
+        Assert.IsNotNull(descriptionManager, "Your scene is missing a DescriptionManager");
     }
 
     // Update is called once per frame
@@ -30,12 +35,41 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
+    void Select(GameObject player)
+    {
+        selectedPlayers.Add(player);
+        SetSelectedColor(player);
+
+        UpdateDescription();
+    }
+
+    void UpdateDescription()
+    {
+        if (selectedPlayers.Count == 0)
+        {
+            descriptionManager.Hide();
+        }
+        else
+        {
+            Description description = selectedPlayers[0].GetComponent<Description>();
+            if (description)
+                descriptionManager.UpdateDescription(description);
+            else
+            {
+                Debug.LogWarning("Selected player has no description");
+                descriptionManager.Hide();
+            }
+        }
+    }
+
     void Unselect()
     {
         foreach (GameObject selectedPlayer in selectedPlayers)
             UnsetSelectedColor(selectedPlayer);
 
         selectedPlayers = new List<GameObject>();
+
+        UpdateDescription();
     }
 
     void HandleCapacity(Vector3 point)
@@ -80,15 +114,10 @@ public class SelectionManager : MonoBehaviour
 
                 if (!Input.GetKey(KeyCode.LeftShift))
                 {
-                    //Remove colors
-                    foreach (GameObject selectedPlayer in selectedPlayers)
-                        UnsetSelectedColor(selectedPlayer);
-
-                    selectedPlayers = new List<GameObject>();
+                    Unselect();
                 }
 
-                selectedPlayers.Add(target);
-                SetSelectedColor(target);
+                Select(target);
             }
             // No active selected player : do nothing
             else if (selectedPlayers.Count == 0)
