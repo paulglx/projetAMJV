@@ -15,7 +15,9 @@ public class PatroleState : IEnemyState
 
     public override void EnterState()
     {
+        Debug.Log("Je suis" + enemy.transform.position + " et je vais " + target);
         MovementManager movement = enemy.GetComponent<MovementManager>();
+        Debug.Log(movement);
         movement.GoToPoint(target);
     }
 
