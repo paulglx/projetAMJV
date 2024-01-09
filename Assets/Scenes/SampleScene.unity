@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: pointB.z
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5436241530677658315, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
     - target: {fileID: 8060343517458026420, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12

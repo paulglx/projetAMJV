@@ -103,11 +103,8 @@ public class SelectionManager : MonoBehaviour
             // Another object is clicked : move there
             else
             {
-                AttackTarget(null);
-
                 Vector3 point = hit.point;
-                foreach (GameObject selectedPlayer in selectedPlayers)
-                    selectedPlayer.GetComponent<MovementManager>().GoToPoint(point);
+                GoToTarget(point);
             }
         }
     }
@@ -116,9 +113,30 @@ public class SelectionManager : MonoBehaviour
     {
         foreach (GameObject selectedPlayer in selectedPlayers)
         {
+            PlayerController player = selectedPlayer.GetComponent<PlayerController>();
+            if (player)
+            {
+                Debug.Log("AttackTargetSelection");
+                player.TransitionToState(new AttackState(player, target));
+            }
+        }
+    }
+
+    void GoToTarget(Vector3 targetPoint)
+    {
+        foreach (GameObject selectedPlayer in selectedPlayers)
+        {
             Attack attack = selectedPlayer.GetComponent<Attack>();
             if (attack)
-                attack.SetTarget(target);
+            {
+                attack.SetTarget(null);
+            }
+
+            PlayerController player = selectedPlayer.GetComponent<PlayerController>();
+            if (player)
+            {
+                player.TransitionToState(new MovementState(player, targetPoint));
+            }
         }
     }
 

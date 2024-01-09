@@ -8,6 +8,8 @@ public class ChaseState : IEnemyState
 
     private readonly GameObject enemyTarget;
 
+    private Attack attack; 
+
     public ChaseState(EnemyController enemyController, GameObject enemy)
     {
         this.enemyController = enemyController;
@@ -17,21 +19,22 @@ public class ChaseState : IEnemyState
 
     public override void EnterState()
     {
-
-        // Mettre en œuvre l'état Idle
-        // Par exemple, arrêter l'ennemi, jouer une animation, etc.
-
-        enemyController.GetComponent<Attack>().SetTarget(enemyTarget);
+        attack = enemyController.GetComponent<Attack>();
+        attack.SetTarget(enemyTarget);
     }
 
     public override void UpdateState()
     {
-        // Vérifier si l'ennemi doit passer à l'état de patrouille (WalkState)
+        if (!enemyTarget)
+        {
+            enemyController.TransitionToState(new IdleState(enemyController));
+        }
     }
 
     public override void ExitState()
     {
-        // Nettoyer ou effectuer des actions de transition
+        attack.SetTarget(null);
+        enemyController.isnotChassing();
     }
 
 }

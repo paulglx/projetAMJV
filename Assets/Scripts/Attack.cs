@@ -13,6 +13,8 @@ public class Attack : MonoBehaviour
     [SerializeField] private AttackType attackType = AttackType.CONTACT;
     [SerializeField] private GameObject projectile;
 
+    private NavMeshAgent navMeshAgent;
+
     enum AttackType
     {
         CONTACT,
@@ -53,6 +55,8 @@ public class Attack : MonoBehaviour
     {
         target = null;
         StartCoroutine(AttackLoop());
+        NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+
     }
 
     // Update is called once per frame
