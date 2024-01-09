@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 8904496962369187938}
+  - component: {fileID: 3506027767386128205}
   m_Layer: 6
   m_Name: Doctor
   m_TagString: Player
@@ -154,6 +155,22 @@ MonoBehaviour:
   healEffect: {fileID: 493906058188617972, guid: 8fc16f8d89c054f9db824b45110cc131, type: 3}
   rageEffect: {fileID: 8853450454537726128, guid: 436cb31ce87934e60868a69161fab7be, type: 3}
   customers: []
+--- !u!114 &3506027767386128205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dcb42634b954dd49dc6e87d38fbedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Doctor
+  description: A doctor that shoots syringes at enemies. He will get enraged if a
+    loyal customer dies.
+  capacityDescription: heal a friend.
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0
