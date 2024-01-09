@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   walkSpeed: 3
   detectionRadius: 10
 --- !u!1001 &166519370382500041
