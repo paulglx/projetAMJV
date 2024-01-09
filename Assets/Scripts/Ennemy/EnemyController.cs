@@ -15,12 +15,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float detectionRadius = 10f; 
     private bool isChasing = false;
 
+    private UnityEngine.AI.NavMeshAgent agent;
+
+
     private void Start()
     {
-        Debug.Log("Je suis " + pointB);
+        Debug.Log("EnemyController Start Je suis " + pointA);
         currentState = new PatroleState(this, pointA, pointB);
         currentState.EnterState();
-//        TransitionToState(new PatroleState(this, pointA, pointB));
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     private void Update()
@@ -69,7 +72,7 @@ public class EnemyController : MonoBehaviour
 
     public bool isArrived(Vector3 targetPoint)
     {
-        if (transform.position == targetPoint )
+        if (agent.velocity.magnitude == 0 )
         {
             return true ;
         }
