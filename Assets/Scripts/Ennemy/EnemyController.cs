@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    readonly private LayerMask enemyLayer;
+    [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
     [SerializeField] private float idleDuration = 3f;
-    [SerializeField] private float detectionRadius = 10f; 
+    [SerializeField] private float detectionRadius = 10f;
     private bool isChasing = false;
     private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -27,25 +27,22 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-        
+
         // Gérer la poursuite si la touche espace est pressée
         if (!isChasing)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
-
-            if (hitColliders.Length >0)
+            if (hitColliders.Length > 0)
             {
                 isChasing = true;
                 TransitionToState(new ChaseState(this, hitColliders[0].gameObject));
-
             }
-
         }
     }
 
     public void TransitionToState(IEnemyState state)
     {
-        currentState.ExitState(); 
+        currentState.ExitState();
         currentState = state;
         currentState.EnterState();
     }
@@ -58,8 +55,8 @@ public class EnemyController : MonoBehaviour
     public void SwitchPatrole()
     {
         Vector3 pointAephemere = pointA;
-        pointA= pointB;
-        pointB= pointAephemere;
+        pointA = pointB;
+        pointB = pointAephemere;
 
     }
 
@@ -70,9 +67,9 @@ public class EnemyController : MonoBehaviour
 
     public bool isArrived(Vector3 targetPoint)
     {
-        if (agent.velocity.magnitude == 0 )
+        if (agent.velocity.magnitude == 0)
         {
-            return true ;
+            return true;
         }
         return false;
     }

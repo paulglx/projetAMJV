@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5826480784536264562}
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -84,10 +84,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267264bab55b494da73eeadb64405dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
-  shield: 1
   isAlive: 1
+  forceDamage: 0
+  health: 0
+  maxHealth: 100
+  shield: 1
+  healthBarPrefab: {fileID: 0}
+  healthBarPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5826480784536264562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 2
   range: 10
+  canBeUsedOnPlayer: 0
   wall: {fileID: 3269595011722081549, guid: 46d686b94318a4b318f73c07797d0f4f, type: 3}
 --- !u!114 &6568713229870472121
 MonoBehaviour:
@@ -278,9 +282,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -5963649703854609706, guid: 70db867b224f643259d42b715d13cd0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 70db867b224f643259d42b715d13cd0a, type: 3}
       propertyPath: m_Name
       value: ROBLOX_WizHat1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70db867b224f643259d42b715d13cd0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8033839601605407903, guid: 70db867b224f643259d42b715d13cd0a, type: 3}
       propertyPath: m_Materials.Array.data[0]

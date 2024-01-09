@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 8904496962369187938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Doctor
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: n_mask
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bba6297cd54445568ca083cae254fd9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4495414801083549842, guid: 0bba6297cd54445568ca083cae254fd9, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -308,6 +312,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 026091f5c276b46319eae150cc0d3fa8, type: 2}
+    - target: {fileID: 5859259852128964746, guid: 0bba6297cd54445568ca083cae254fd9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728723278266805325, guid: 0bba6297cd54445568ca083cae254fd9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -326,6 +338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 321279076949066787}
     m_Modifications:
+    - target: {fileID: -9174802003339985058, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.487
@@ -366,9 +382,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 87.42
       objectReference: {fileID: 0}
+    - target: {fileID: -1214312212922968265, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
       propertyPath: m_Name
       value: stethoscope
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826503885085323509, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235626355679283966, guid: b04aa7fe176ae474bbbd44b9edbd964f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

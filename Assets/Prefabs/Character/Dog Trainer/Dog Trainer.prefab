@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5436241530677658315}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 1807049841726466866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dog Trainer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 1
+  forceDamage: 0
   health: 0
   maxHealth: 100
   shield: 1
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   range: 50
+  canBeUsedOnPlayer: 0
   spawnDistance: 2
   dogPrefab: {fileID: 1355391467611189933, guid: 5a5859ffbb1084e85a9dd194b81e1336, type: 3}
   dogs: []
@@ -280,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whistle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b934a614e3f547d2ad197f43761de0e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -357,6 +363,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f163533d8665645fdb3ff923edce0579, type: 3}
       propertyPath: m_Name
       value: cap
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f163533d8665645fdb3ff923edce0579, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242711457820704425, guid: f163533d8665645fdb3ff923edce0579, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
