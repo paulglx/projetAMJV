@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 1807049841726466866}
   - component: {fileID: 6387035341547074240}
+  - component: {fileID: 896666534959983033}
   m_Layer: 6
   m_Name: Dog Trainer
   m_TagString: Player
@@ -149,6 +150,23 @@ MonoBehaviour:
   description: Your dogs will attack whatever enemy you target until it dies. If
     you die, they will get lost and run in circles.
   capacityDescription: spawn a dog.
+--- !u!114 &896666534959983033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9332ca9c2535cc656801b1bc4220d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  walkSpeed: 3
+  detectionRadius: 10
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 8904496962369187938}
   - component: {fileID: 3506027767386128205}
+  - component: {fileID: 7747542453559628906}
   m_Layer: 6
   m_Name: Doctor
   m_TagString: Player
@@ -171,6 +172,23 @@ MonoBehaviour:
   description: A doctor that shoots syringes at enemies. He will get enraged if a
     loyal customer dies.
   capacityDescription: heal a friend.
+--- !u!114 &7747542453559628906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9332ca9c2535cc656801b1bc4220d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  walkSpeed: 3
+  detectionRadius: 10
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0
