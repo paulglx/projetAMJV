@@ -50,13 +50,13 @@ public class SelectionManager : MonoBehaviour
 
     void UpdateDescription()
     {
-        if (selectedPlayers.Count == 0)
+        if (selectedPlayers.Count == 1)
         {
-            descriptionManager.Unselect();
+            descriptionManager.Select(selectedPlayers[0]);
         }
         else
         {
-            descriptionManager.Select(selectedPlayers[0]);
+            descriptionManager.Unselect();
         }
     }
 
