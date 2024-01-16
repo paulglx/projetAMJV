@@ -32,4 +32,9 @@ public class IdlePlayerState : IPlayerState
 
     }
 
+        public override string GetState()
+    {
+        return "IdlePlayerState";
+    }
+
 }

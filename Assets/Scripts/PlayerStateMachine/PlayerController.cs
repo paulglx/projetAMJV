@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float detectionRadius = 10f;
-    private IPlayerState currentState;
+    [SerializeField] private IPlayerState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
 
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public void TransitionToState(IPlayerState state)
     {
-        //Debug.Log("Je transitionne from " + currentState + " to " + state);
+
         currentState.ExitState();
         currentState = state;
         currentState.EnterState();
@@ -47,5 +47,18 @@ public class PlayerController : MonoBehaviour
     public LayerMask GetEnemyLayer()
     {
         return enemyLayer;
+    }
+
+    public void GoTo(Vector3 point)
+    {
+        if (currentState.GetState()!= "KingState")
+        {
+            TransitionToState(new MovementState(this, point)) ;
+        }
+        else 
+        {
+            TransitionToState( new KingState(this, point));
+        }
+
     }
 }

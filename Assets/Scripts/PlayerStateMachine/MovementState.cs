@@ -33,4 +33,14 @@ public class MovementState : IPlayerState
 
     }
 
+    public Vector3 GetTarget()
+    {
+        return target;
+    }
+
+    public override string GetState()
+    {
+        return "MovementState";
+    }
+
 }

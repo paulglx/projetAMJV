@@ -29,7 +29,9 @@ public class FlagManager : MonoBehaviour
     {
         Debug.Log("CollisionDrapeau");
         Debug.Log(other.gameObject.layer);
-        
+        Debug.Log(other.gameObject.layer);
+
+
         if (other.gameObject.layer == 6)
         {
             AttachFlag(other.gameObject);
