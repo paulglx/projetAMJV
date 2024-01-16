@@ -68,4 +68,13 @@ public abstract class Capacity : MonoBehaviour
         return false;
     }
 
+    public float GetLastUseTime()
+    {
+        return lastUseTime;
+    }
+
+    public float GetCooldown()
+    {
+        return cooldown;
+    }
 }
