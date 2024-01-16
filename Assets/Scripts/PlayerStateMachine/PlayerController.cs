@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float walkSpeed = 3f;
-    [SerializeField] private float detectionRadius = 10f; 
+    [SerializeField] private float detectionRadius = 10f;
     private IPlayerState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
@@ -21,24 +21,20 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-        
+
     }
 
     public void TransitionToState(IPlayerState state)
     {
-        Debug.Log("Je transitionne from "+ currentState + " to " + state);
-        currentState.ExitState(); 
+        Debug.Log("Je transitionne from " + currentState + " to " + state);
+        currentState.ExitState();
         currentState = state;
         currentState.EnterState();
     }
 
     public bool isArrived(Vector3 targetPoint)
     {
-        if ((agent.velocity.magnitude == 0 ) & (Vector3.Distance(targetPoint,transform.position)<1 ))
-        {
-            return true ;
-        }
-        return false;
+        return agent.velocity.magnitude == 0 & Vector3.Distance(targetPoint, transform.position) < 1;
     }
 
 

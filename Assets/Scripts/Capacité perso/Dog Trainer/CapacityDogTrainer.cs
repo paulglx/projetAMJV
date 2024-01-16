@@ -19,15 +19,6 @@ public class CapacityDogTrainer : Capacity
         dogs = new List<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            HandleClick();
-        }
-    }
-
     public override bool Use(GameObject target = null, Vector3 point = default)
     {
         if (dogs.Count < maxDogs)
@@ -43,20 +34,7 @@ public class CapacityDogTrainer : Capacity
         }
     }
 
-    void HandleClick()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-        {
-            if (hit.collider.gameObject.CompareTag("Enemy"))
-            {
-                SetDogsTarget(hit.collider.gameObject);
-            }
-        }
-    }
-
-    void SetDogsTarget(GameObject target)
+    public void SetDogsTarget(GameObject target)
     {
 
         // Remove dogs if they are dead

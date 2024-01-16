@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1807049841726466866}
   - component: {fileID: 6387035341547074240}
   - component: {fileID: 896666534959983033}
+  - component: {fileID: 3231090662396156796}
   m_Layer: 6
   m_Name: Dog Trainer
   m_TagString: Player
@@ -168,6 +169,24 @@ MonoBehaviour:
     m_Bits: 128
   walkSpeed: 3
   detectionRadius: 0
+--- !u!114 &3231090662396156796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 100000000
+  target: {fileID: 0}
+  attackDelay: 0
+  attackType: 3
+  projectile: {fileID: 0}
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

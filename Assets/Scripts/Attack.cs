@@ -19,7 +19,8 @@ public class Attack : MonoBehaviour
     {
         CONTACT,
         REMOTE,
-        REMOTEAUTO
+        REMOTEAUTO,
+        DOGS
     }
 
     IEnumerator AttackLoop()
@@ -83,6 +84,8 @@ public class Attack : MonoBehaviour
             DoRemoteAttack(target);
         else if (attackType == AttackType.REMOTEAUTO)
             DoRemoteAutoAttack(target);
+        else if (attackType == AttackType.DOGS)
+            DoDogsAttack(target);
     }
 
     void DoContactAttack(GameObject target)
@@ -107,7 +110,12 @@ public class Attack : MonoBehaviour
         GameObject newProjectile = Instantiate(projectile);
         ProjectileTargetEnnemy projectileAttack = newProjectile.GetComponent<ProjectileTargetEnnemy>();
         projectileAttack.SetProjectile(transform.position, target, damage);
+    }
 
+    void DoDogsAttack(GameObject target)
+    {
+        CapacityDogTrainer capacityDogTrainer = GetComponent<CapacityDogTrainer>();
+        capacityDogTrainer.SetDogsTarget(target);
     }
 
     public GameObject GetTarget()

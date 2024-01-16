@@ -18,12 +18,13 @@ public class IdlePlayerState : IPlayerState
 
     public override void UpdateState()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, player.GetDetectionRadius(), player.GetEnemyLayer() );
-            if (hitColliders.Length >0)
-            {
-                //Attaquer l'enemy
+        Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, player.GetDetectionRadius(), player.GetEnemyLayer());
+        if (hitColliders.Length > 0)
+        {
+            //Attaquer l'enemy
+            if (player.GetComponent<Attack>())
                 player.TransitionToState(new AttackState(player, hitColliders[0].gameObject));
-            }
+        }
     }
 
     public override void ExitState()
