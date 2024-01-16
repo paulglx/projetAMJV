@@ -33,6 +33,11 @@ public class SelectionManager : MonoBehaviour
         {
             Unselect();
         }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            HandleCapacity();
+        }
     }
 
     void Select(GameObject player)
@@ -82,6 +87,12 @@ public class SelectionManager : MonoBehaviour
     {
         foreach (GameObject selectedPlayer in selectedPlayers)
             selectedPlayer.GetComponent<Capacity>().TryToUse(target, target.transform.position);
+    }
+
+    void HandleCapacity()
+    {
+        foreach (GameObject selectedPlayer in selectedPlayers) 
+            selectedPlayer.GetComponent<Capacity>().TryToUse(null,new Vector3(-100,-100,-100));
     }
 
     void HandleClick()
