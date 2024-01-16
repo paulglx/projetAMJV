@@ -18,11 +18,11 @@ public class FlagManager : MonoBehaviour
     }
 
 
-    private AttachFlag(GameObject player )
+    private void AttachFlag(GameObject player )
     {
-        this.transform.parent = player; 
-        Destroy(player.GetComponent<Attack>);
-        player.GetCompo
+        this.gameObject.transform.parent = player.transform; 
+        Destroy(player.GetComponent<Attack>());
+        player.GetComponent<MovementManager>().GoToPoint(new Vector3(0,0,0));
     }
 
     private void OnCollisionEnter(Collision other) 
