@@ -10,4 +10,5 @@ public abstract class IPlayerState
     
     public abstract void ExitState();
     
+    public abstract string GetState();
 }

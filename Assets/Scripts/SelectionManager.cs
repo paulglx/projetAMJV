@@ -167,7 +167,7 @@ public class SelectionManager : MonoBehaviour
             PlayerController player = selectedPlayer.GetComponent<PlayerController>();
             if (player)
             {
-                player.TransitionToState(new MovementState(player, targetPoint));
+                player.GoTo(targetPoint);
             }
         }
     }
