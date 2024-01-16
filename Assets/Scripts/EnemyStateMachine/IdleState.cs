@@ -28,7 +28,6 @@ public class IdleState : IEnemyState
 
     IEnumerator WaitAndSwitchState(EnemyController enemy)
     {
-        Debug.Log("Je suis dans le Wait");
         yield return new WaitForSeconds(enemy.GetidleDuration());
         enemy.TransitionToState(new PatroleState(enemy, enemy.GetpointB()));
     }

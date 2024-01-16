@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class AttackState : IPlayerState
 {
 
-    private PlayerController player; 
+    private PlayerController player;
 
     private readonly GameObject enemyTarget;
 
-    private Attack attack; 
+    private Attack attack;
 
     public AttackState(PlayerController player, GameObject enemy)
     {
@@ -21,7 +22,9 @@ public class AttackState : IPlayerState
     public override void EnterState()
     {
         attack = player.GetComponent<Attack>();
-        attack.SetTarget(enemyTarget);
+        if (attack)
+            attack.SetTarget(enemyTarget);
+
     }
 
     public override void UpdateState()
@@ -34,7 +37,8 @@ public class AttackState : IPlayerState
 
     public override void ExitState()
     {
-        attack.SetTarget(null);
+        if (attack)
+            attack.SetTarget(null);
     }
 
 }

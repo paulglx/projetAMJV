@@ -138,7 +138,6 @@ public class SelectionManager : MonoBehaviour
             PlayerController player = selectedPlayer.GetComponent<PlayerController>();
             if (player)
             {
-                Debug.Log("AttackTargetSelection");
                 player.TransitionToState(new AttackState(player, target));
             }
         }
