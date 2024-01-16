@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7eebd174ff53112419b27f9d903573d7
+guid: 154a724602422044c91070a5f3c67c11
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -440,13 +440,13 @@ ModelImporter:
     second: BasicMotions@Run01 - Right
   - first:
       74: 7400010
-    second: BasicMotions@Run01 - Backwards
+    second: BasicMotions@Run01 - Backwards [RM]
   - first:
       74: 7400012
-    second: BasicMotions@Run01 - BackwardsLeft
+    second: BasicMotions@Run01 - BackwardsLeft [RM]
   - first:
       74: 7400014
-    second: BasicMotions@Run01 - BackwardsRight
+    second: BasicMotions@Run01 - BackwardsRight [RM]
   - first:
       74: 7400016
     second: BasicMotions@Run01_ClosedHands - Forwards
@@ -496,41 +496,11 @@ ModelImporter:
       74: 7400046
     second: BasicMotions@Run01 - BackwardsRight [RM]
   - first:
-      74: 7400048
-    second: BasicMotions@Sprint01 - Forwards [RM]
-  - first:
-      74: 7400050
-    second: BasicMotions@Sprint01 - ForwardsLeft [RM]
-  - first:
-      74: 7400052
-    second: BasicMotions@Sprint01 - ForwardsRight [RM]
-  - first:
-      74: 7400054
-    second: BasicMotions@Sprint01 - Left [RM]
-  - first:
-      74: 7400056
-    second: BasicMotions@Sprint01 - Right [RM]
-  - first:
       95: 9500000
     second: //RootNode
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
-  - first:
-      74: 7832394241297634407
-    second: BasicMotions@Sprint01 - Forwards
-  - first:
-      74: 8488718140882879573
-    second: BasicMotions@Sprint01 - ForwardsLeft
-  - first:
-      74: -6886268956249851627
-    second: BasicMotions@Sprint01 - ForwardsRight
-  - first:
-      74: -526742019657851752
-    second: BasicMotions@Sprint01 - Left
-  - first:
-      74: 4961537051176895841
-    second: BasicMotions@Sprint01 - Right
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -561,8 +531,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BasicMotions@Sprint01 - Forwards
-      takeName: BasicMotions@Sprint01 - Forwards
+      name: BasicMotions@Run01 - Forwards [RM]
+      takeName: BasicMotions@Run01 - Forwards
       internalID: 0
       firstFrame: 0
       lastFrame: 16
@@ -573,10 +543,10 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -590,22 +560,22 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BasicMotions@Sprint01 - ForwardsLeft
-      takeName: BasicMotions@Sprint01 - ForwardsLeft
+      name: BasicMotions@Run01 - ForwardsLeft [RM]
+      takeName: BasicMotions@Run01 - ForwardsLeft
       internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
-      orientationOffsetY: 45
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -619,22 +589,22 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BasicMotions@Sprint01 - ForwardsRight
-      takeName: BasicMotions@Sprint01 - ForwardsRight
+      name: BasicMotions@Run01 - ForwardsRight [RM]
+      takeName: BasicMotions@Run01 - ForwardsRight
       internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
-      orientationOffsetY: -45
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -648,22 +618,22 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BasicMotions@Sprint01 - Left
-      takeName: BasicMotions@Sprint01 - Left
+      name: BasicMotions@Run01 - Left [RM]
+      takeName: BasicMotions@Run01 - Left
       internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
-      orientationOffsetY: 90
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -677,22 +647,109 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BasicMotions@Sprint01 - Right
-      takeName: BasicMotions@Sprint01 - Right
+      name: BasicMotions@Run01 - Right [RM]
+      takeName: BasicMotions@Run01 - Right
       internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
-      orientationOffsetY: -90
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BasicMotions@Run01 - Backwards [RM]
+      takeName: BasicMotions@Run01 - Backwards
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BasicMotions@Run01 - BackwardsLeft [RM]
+      takeName: BasicMotions@Run01 - BackwardsLeft
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BasicMotions@Run01 - BackwardsRight [RM]
+      takeName: BasicMotions@Run01 - BackwardsRight
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1

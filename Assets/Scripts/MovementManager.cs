@@ -15,6 +15,8 @@ public class MovementManager : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+
+        Debug.Log("I am " + gameObject.name + " and my animator is " + animator.name);
     }
 
     // Update is called once per frame
@@ -31,17 +33,11 @@ public class MovementManager : MonoBehaviour
 
         //Théorie validé il faut en parler au prof
 
-        if (agent)
-        {
-            // Debug.Log("Il y avait un agent");
-            agent.SetDestination(point);
-        }
-        else
+        if (!agent)
         {
             agent = GetComponent<NavMeshAgent>();
-            agent.SetDestination(point);
-            // Debug.Log("Il y avait pas d'agent dans "+ this.gameObject);
         }
+        agent.SetDestination(point);
 
     }
 
