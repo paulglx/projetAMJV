@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6568713229870472121}
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 2901723829880376713}
+  - component: {fileID: 501638169273659757}
   m_Layer: 6
   m_Name: Wizard
   m_TagString: Player
@@ -165,6 +166,23 @@ MonoBehaviour:
   description: He shoots magical bullets that follows the targeted enemies wherever
     he goes.
   capacityDescription: create a wall.
+--- !u!114 &501638169273659757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9332ca9c2535cc656801b1bc4220d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  walkSpeed: 3
+  detectionRadius: 10
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0

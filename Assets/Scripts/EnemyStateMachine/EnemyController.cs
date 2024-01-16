@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float idleDuration = 3f;
     [SerializeField] private float detectionRadius = 10f; 
     [SerializeField] private bool isChasing = false;
-    private IEnemyState currentState;
+    [SerializeField] private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
 
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-        
+        Debug.Log(currentState);
         if (!isChasing)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
