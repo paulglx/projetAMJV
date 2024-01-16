@@ -27,17 +27,25 @@ public class FlagManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
+        Debug.Log("CollisionDrapeau");
+        Debug.Log(other.gameObject.layer);
+        
         if (other.gameObject.layer == 6)
         {
             AttachFlag(other.gameObject);
-
         }
-        
     }
 
 
     private void OnTriggerEnter(Collider other) 
     {
+        Debug.Log("TriggerDrapeau");
+        Debug.Log(other.gameObject.layer);
+
+        if (other.gameObject.layer == 6)
+        {
+            AttachFlag(other.gameObject);
+        }
         
     }
 }

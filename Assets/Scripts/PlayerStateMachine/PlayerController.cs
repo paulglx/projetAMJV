@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public void TransitionToState(IPlayerState state)
     {
-        Debug.Log("Je transitionne from " + currentState + " to " + state);
+        //Debug.Log("Je transitionne from " + currentState + " to " + state);
         currentState.ExitState();
         currentState = state;
         currentState.EnterState();
