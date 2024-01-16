@@ -84,8 +84,8 @@ public class SelectionManager : MonoBehaviour
 
     void HandleCapacity()
     {
-        foreach (GameObject selectedPlayer in selectedPlayers) 
-            selectedPlayer.GetComponent<Capacity>().TryToUse(null,new Vector3(-100,-100,-100));
+        foreach (GameObject selectedPlayer in selectedPlayers)
+            selectedPlayer.GetComponent<Capacity>().TryToUse(null, new Vector3(-100, -100, -100));
     }
 
     void HandleClick()

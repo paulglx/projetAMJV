@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-//        isAlive = true;
+        //        isAlive = true;
         health = maxHealth;
 
         // Instantiate Health bar prefab inside parent
@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+
     }
 
     private void OnValidate()
@@ -56,7 +56,6 @@ public class Health : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        Debug.Log("i take damage");
         health -= Mathf.Max(damage - shield, 0);
 
         if (health <= 0)
@@ -69,8 +68,7 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-//        isAlive = false;
-        Debug.Log("I am " + gameObject.name + " and i'm dead");
+        //Debug.Log("I am " + gameObject.name + " and i'm dead");
         Destroy(gameObject);
     }
 
