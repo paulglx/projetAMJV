@@ -27,7 +27,6 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-        Debug.Log(currentState);
         if (!isChasing)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);

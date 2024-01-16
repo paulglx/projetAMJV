@@ -8,7 +8,7 @@ public class MovementManager : MonoBehaviour
 {
 
     private NavMeshAgent agent;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
