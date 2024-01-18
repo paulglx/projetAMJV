@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 public class EnemyController : MonoBehaviour
@@ -23,7 +24,7 @@ public class EnemyController : MonoBehaviour
         Debug.Log("StartDeEnemy");
         currentState = new PatroleState(this, pointB);
         currentState.EnterState();
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         isChasing = false;
         isKingChasing = false;
         SubscribeToFlag(); 

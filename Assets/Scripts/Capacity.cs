@@ -22,6 +22,12 @@ public abstract class Capacity : MonoBehaviour
     public void TryToUse(GameObject target, Vector3 point)
     {
 
+        if (target == null && point == default)
+        {
+            Debug.Log("I can't use my capacity on nothing");
+            return;
+        }
+
         if (target != null && target.CompareTag("Player") && !canBeUsedOnPlayer)
         {
             Debug.Log("I can't use my capacity on a player");

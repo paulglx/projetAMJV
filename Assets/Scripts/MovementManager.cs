@@ -16,7 +16,7 @@ public class MovementManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
 
-        Debug.Log("I am " + gameObject.name + " and my animator is " + animator.name);
+        // Debug.Log("I am " + gameObject.name + " and my animator is " + animator.name);
     }
 
     // Update is called once per frame
