@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChaseState : IEnemyState
 {
-    private EnemyController enemyController; 
+    private EnemyController enemyController;
 
     private readonly GameObject enemyTarget;
 
-    private Attack attack; 
+    private Attack attack;
 
     public ChaseState(EnemyController enemyController, GameObject enemy)
     {
