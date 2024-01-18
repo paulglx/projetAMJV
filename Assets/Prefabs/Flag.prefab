@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2708181363331438082}
   - component: {fileID: 4839512926489524801}
   m_Layer: 0
-  m_Name: Drapeau
+  m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d72912dcb3ce13888f327c8db7aa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlagCaptured:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5039703961934524479, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: AttackTheKing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &4839512926489524801
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,28 +6,34 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float walkSpeed = 3f;
+//    [SerializeField] private float walkSpeed;
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
-    [SerializeField] private float idleDuration = 3f;
-    [SerializeField] private float detectionRadius = 10f;
-    [SerializeField] private bool isChasing = false;
+    [SerializeField] private float idleDuration;
+    [SerializeField] private float detectionRadius;
+    [SerializeField] private bool isChasing ;
+    [SerializeField] private bool isKingChasing;
+    [SerializeField] private GameObject flag; 
     [SerializeField] private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
 
     private void Start()
     {
+        Debug.Log("StartDeEnemy");
         currentState = new PatroleState(this, pointB);
         currentState.EnterState();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         isChasing = false;
+        isKingChasing = false;
+        SubscribeToFlag(); 
+
     }
 
     private void Update()
     {
         currentState.UpdateState();
-        if (!isChasing)
+        if (!isChasing & !isKingChasing)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
 
@@ -44,6 +50,8 @@ public class EnemyController : MonoBehaviour
     public void TransitionToState(IEnemyState state)
     {
         //Debug.Log("Je transitionne from "+ currentState + " to " + state);
+        //Debug.Log(gameObject);
+        //Debug.Log("Transition"+ currentState + this.gameObject);
         currentState.ExitState();
         currentState = state;
         currentState.EnterState();
@@ -94,5 +102,38 @@ public class EnemyController : MonoBehaviour
         isChasing = false;
     }
 
+    public void AttackTheKing(GameObject king)
+    {
+        Debug.Log("Debut");
+        isKingChasing = true;
+        Debug.Log(new KingChaseState(this, king));
+        TransitionToState(new KingChaseState(this, king));
+        Debug.Log("Fin");
+
+    }
+
+    public void SubscribeToFlag()
+    {
+        flag = GameObject.Find("Flag");
+        if (flag!=null)
+        {
+            flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
+
+        }
+        else 
+        {
+            Debug.LogWarning("The gameObject \"Flag\" is not found in the current scene.");
+        }
+    }
+
+    public void UnsubscribeToFlag()
+    {
+        flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
+    }
+
+    private void OnDestroy() 
+    {
+        UnsubscribeToFlag();       
+    }
 
 }

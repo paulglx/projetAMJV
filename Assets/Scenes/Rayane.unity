@@ -33601,6 +33601,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2708181363331438082, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
+      propertyPath: FlagCaptured.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1355391467611189933, guid: 7f954a086bcb4d758a318f2c25a69e38, type: 3}
     - target: {fileID: 2988526012944555501, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
       propertyPath: m_Enabled
       value: 1
