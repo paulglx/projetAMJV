@@ -50,10 +50,8 @@ public class EnemyController : MonoBehaviour
 
     public void TransitionToState(IEnemyState state)
     {
-        Debug.Log("From" + currentState+ "to" + state + gameObject);
         if (!isKingChasing)
         {
-            Debug.Log("entrer");
             currentState.ExitState();
             currentState = state;
             currentState.EnterState();            
