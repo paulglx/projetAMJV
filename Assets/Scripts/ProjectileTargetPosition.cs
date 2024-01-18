@@ -32,6 +32,7 @@ public class ProjectileTargetPosition : MonoBehaviour
     private void MoveProjectile()
     {
         transform.position += speed * Time.deltaTime * transform.forward;
+        transform.position += new Vector3(0, 1-transform.position.y, 0);
     }
 
 
@@ -55,11 +56,11 @@ public class ProjectileTargetPosition : MonoBehaviour
     public void SetProjectile(Vector3 iniPosition, Vector3 targPosition, float dam)
     {
 
-        initialPosition = iniPosition + new Vector3(0, 1, 0);
-        targetPosition = targPosition + new Vector3(0, 1, 0);
+        initialPosition = iniPosition ;
+        targetPosition = targPosition ;
         initialPosition.y = 1;
         targetPosition.y = 1;
-
+        
         damage = dam;
         transform.forward = targetPosition - initialPosition;
     }

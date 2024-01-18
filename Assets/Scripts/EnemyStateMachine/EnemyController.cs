@@ -50,12 +50,15 @@ public class EnemyController : MonoBehaviour
 
     public void TransitionToState(IEnemyState state)
     {
-        //Debug.Log("Je transitionne from "+ currentState + " to " + state);
-        //Debug.Log(gameObject);
-        //Debug.Log("Transition"+ currentState + this.gameObject);
-        currentState.ExitState();
-        currentState = state;
-        currentState.EnterState();
+        Debug.Log("From" + currentState+ "to" + state + gameObject);
+        if (!isKingChasing)
+        {
+            Debug.Log("entrer");
+            currentState.ExitState();
+            currentState = state;
+            currentState.EnterState();            
+        }
+
     }
 
     public bool IsChasing()
@@ -106,9 +109,9 @@ public class EnemyController : MonoBehaviour
     public void AttackTheKing(GameObject king)
     {
         Debug.Log("Debut");
-        isKingChasing = true;
         Debug.Log(new KingChaseState(this, king));
         TransitionToState(new KingChaseState(this, king));
+        isKingChasing = true;
         Debug.Log("Fin");
 
     }

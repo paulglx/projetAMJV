@@ -25,7 +25,7 @@ public class FlagManager : MonoBehaviour
     {
         this.gameObject.transform.parent = player.transform; 
         Destroy(player.GetComponent<Attack>());
-        player.GetComponent<MovementManager>().GoToPoint(new Vector3(0,0,0));
+        player.GetComponent<MovementManager>().GoToPoint(new Vector3(4.5f,0,-7.5f));
         FlagCaptured.Invoke(player);
         isCaptured = true;
     }
@@ -33,15 +33,17 @@ public class FlagManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        Debug.Log("Trigger");
         if (!isCaptured)
         {
             if (other.gameObject.layer == 6)
             {
-                Debug.Log(other.gameObject);
                 AttachFlag(other.gameObject);
             }            
-        }
-        
+        }        
+    }
+
+    private void OnDestroy() 
+    {
+        Debug.Log("Fin de la game");
     }
 }
