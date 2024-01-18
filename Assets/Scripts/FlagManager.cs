@@ -44,6 +44,6 @@ public class FlagManager : MonoBehaviour
 
     private void OnDestroy() 
     {
-        Debug.Log("Fin de la game");
+        Debug.Log("Fin de la game, perdu");
     }
 }

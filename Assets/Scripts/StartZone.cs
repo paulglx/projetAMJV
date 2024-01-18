@@ -22,6 +22,6 @@ public class StartZone : MonoBehaviour
 
     private void EndGame()
     {
-        Debug.Log("End Game");
+        Debug.Log("End Game Win ");
     }
 }

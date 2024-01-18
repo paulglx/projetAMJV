@@ -108,12 +108,8 @@ public class EnemyController : MonoBehaviour
 
     public void AttackTheKing(GameObject king)
     {
-        Debug.Log("Debut");
-        Debug.Log(new KingChaseState(this, king));
         TransitionToState(new KingChaseState(this, king));
         isKingChasing = true;
-        Debug.Log("Fin");
-
     }
 
     public void SubscribeToFlag()
