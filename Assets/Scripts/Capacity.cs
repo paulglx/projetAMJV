@@ -9,8 +9,11 @@ public abstract class Capacity : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] private float range;
     [SerializeField] private bool canBeUsedOnPlayer = false;
+    [SerializeField] private bool canBeUsedOnFloor = false;
+    [SerializeField] private bool canBeUsedOnNothing = false;
 
     private float lastUseTime;
+
 
     public abstract bool Use(GameObject target = null, Vector3 point = default);
 
@@ -22,7 +25,7 @@ public abstract class Capacity : MonoBehaviour
     public void TryToUse(GameObject target, Vector3 point)
     {
 
-        if (target == null && point == default)
+/*        if (target == null && point == default)
         {
             Debug.Log("I can't use my capacity on nothing");
             return;
@@ -31,6 +34,11 @@ public abstract class Capacity : MonoBehaviour
         if (target != null && target.CompareTag("Player") && !canBeUsedOnPlayer)
         {
             Debug.Log("I can't use my capacity on a player");
+            return;
+        }
+*/
+        if (!CanBeUsed(target, point))
+        {
             return;
         }
 
@@ -77,8 +85,35 @@ public abstract class Capacity : MonoBehaviour
             }
         }
 
+        if (canBeUsedOnNothing)
+        {
+            return true;
+        }
+
         return false;
     }
+
+    private bool CanBeUsed(GameObject target, Vector3 point)
+    {
+        if ((target=null) & (!canBeUsedOnFloor) & (!canBeUsedOnNothing))
+        {
+            Debug.Log("I need a target to use my capacity");
+            return false;
+        }
+        else if ((point == default) & (!canBeUsedOnPlayer) & (!canBeUsedOnNothing))
+        {            
+            Debug.Log("I need a point to use my capacity");
+            return false;   
+        }
+        else if (!canBeUsedOnNothing)
+        {
+            Debug.Log("I can't use my capacity on nothing");
+            return false;
+        }
+        Debug.Log("true");
+        return true;
+    }
+
 
     public float GetLastUseTime()
     {
@@ -89,4 +124,6 @@ public abstract class Capacity : MonoBehaviour
     {
         return cooldown;
     }
+
+
 }

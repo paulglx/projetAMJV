@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
             {
                 isChasing = true;
                 TransitionToState(new ChaseState(this, hitColliders[0].gameObject));
+                hitColliders[0].gameObject.GetComponent<PlayerController>().AddChasedBy(this.gameObject);
 
             }
 
@@ -112,19 +113,10 @@ public class EnemyController : MonoBehaviour
     public void SubscribeToFlag()
     {
         flag = GameObject.Find("Flag");
-        Component[] tousLesComponents = flag.GetComponents<Component>();
-        foreach (Component composant in tousLesComponents )
-        {
-            Debug.Log(composant.GetType().ToString());
-        }
-        
+
         if (flag!=null)
         {
-            Debug.Log(flag);
-            Debug.Log(flag.transform.position);
-            Debug.Log(flag.GetComponent<Rigidbody>());
             flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
-
         }
         else 
         {

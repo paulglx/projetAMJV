@@ -183,6 +183,8 @@ MonoBehaviour:
   cooldown: 10
   range: 99999
   canBeUsedOnPlayer: 0
+  canBeUsedOnFloor: 0
+  canBeUsedOnNothing: 1
   radius: 5
 --- !u!1001 &122879807867555980
 PrefabInstance:

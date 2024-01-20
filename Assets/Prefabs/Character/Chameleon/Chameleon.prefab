@@ -184,6 +184,8 @@ MonoBehaviour:
   cooldown: 3
   range: 0
   canBeUsedOnPlayer: 0
+  canBeUsedOnFloor: 0
+  canBeUsedOnNothing: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64

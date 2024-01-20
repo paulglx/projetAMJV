@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CapacityChameleon : Capacity
 { 
-    [SerializeField] private LayerMask playerLayer;
-
-    [SerializeField] private LayerMask invisibleLayer; 
-
+    [SerializeField] private int playerLayer;
+    [SerializeField] private int invisibleLayer; 
     [SerializeField] private float capacityTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +21,7 @@ public class CapacityChameleon : Capacity
         {
             Debug.Log("I am a Chameleon and I use my capacity on " );
             specialattaque();
+            StopChased();
 
             return true;
         }
@@ -36,8 +36,20 @@ public class CapacityChameleon : Capacity
     private void specialattaque()
     {
         this.gameObject.layer = invisibleLayer; 
+        
         StartCoroutine(WaitAndSwitchLayer());
     }
+
+    private void StopChased()
+    {
+        List<GameObject> enemies = this.gameObject.GetComponent<PlayerController>().GetChasedBy();
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyController enemyController = enemy.GetComponent<EnemyController>();
+            enemyController.TransitionToState(new PatroleState(enemyController, enemyController.GetpointB()));
+        }
+    }
+                
 
 
     IEnumerator WaitAndSwitchLayer()

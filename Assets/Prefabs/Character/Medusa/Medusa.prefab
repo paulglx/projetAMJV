@@ -183,6 +183,8 @@ MonoBehaviour:
   cooldown: 1
   range: 20
   canBeUsedOnPlayer: 0
+  canBeUsedOnFloor: 0
+  canBeUsedOnNothing: 1
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0
