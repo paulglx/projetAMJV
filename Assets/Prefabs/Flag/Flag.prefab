@@ -264,6 +264,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.054137066
       objectReference: {fileID: 0}
+    - target: {fileID: 7991113125823017423, guid: 91f48a26664584ad5b858b4df362bb1e, type: 3}
+      propertyPath: m_Name
+      value: FlagMesh
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

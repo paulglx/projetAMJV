@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2364972922317528855}
   - component: {fileID: 8317025884679301491}
   - component: {fileID: 7486366746926454758}
+  - component: {fileID: 2887207547848583777}
   m_Layer: 6
   m_Name: Chameleon
   m_TagString: Player
@@ -73,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b837330981b4cbcbaebf5eec235e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &5436241530677658315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +169,28 @@ MonoBehaviour:
     m_Bits: 128
   walkSpeed: 3
   detectionRadius: 10
+--- !u!114 &2887207547848583777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355391467611189933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0608cb379e865d291f163f328595f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  range: 0
+  canBeUsedOnPlayer: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  invisibleLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  capacityTime: 2
 --- !u!1001 &6184751714021476011
 PrefabInstance:
   m_ObjectHideFlags: 0

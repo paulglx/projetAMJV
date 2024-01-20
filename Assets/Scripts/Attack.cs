@@ -12,8 +12,9 @@ public class Attack : MonoBehaviour
     [SerializeField] private float attackDelay; // Attack delay in seconds
     [SerializeField] private AttackType attackType = AttackType.CONTACT;
     [SerializeField] private GameObject projectile;
-
-    private NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent; 
+    private MovementManager movementManager;
+    private bool canAttack; 
 
     enum AttackType
     {
@@ -34,13 +35,12 @@ public class Attack : MonoBehaviour
 
             else
             {
-                MovementManager movementManager = GetComponent<MovementManager>();
-
                 float distance = Vector3.Distance(transform.position, target.transform.position);
-                if (distance <= range)
+                if (distance <= range & canAttack)
                 {
                     DoAttack(target);
-                    yield return new WaitForSeconds(attackDelay);
+                    canAttack= false; 
+                    StartCoroutine(WaitForAnotherAttack());
                 }
                 else
                 {
@@ -51,12 +51,22 @@ public class Attack : MonoBehaviour
         }
     }
 
+    IEnumerator WaitForAnotherAttack()
+    {
+        yield return new WaitForSeconds(attackDelay);
+        canAttack = true; 
+
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         target = null;
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        movementManager = GetComponent<MovementManager>();
+        canAttack = true; 
         StartCoroutine(AttackLoop());
-        NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
 
     }
 
@@ -68,8 +78,6 @@ public class Attack : MonoBehaviour
 
     void SetStoppingDistance()
     {
-        NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
-
         if (target)
             navMeshAgent.stoppingDistance = range;
         else

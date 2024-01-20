@@ -36,11 +36,17 @@ public abstract class Capacity : MonoBehaviour
 
         if (Time.time - lastUseTime >= cooldown)
         {
+            Debug.Log("1");
+            Debug.Log(target);
             if (isInRange(target, point))
             {
+                Debug.Log("2");
                 bool hasUsed = Use(target, point);
                 if (hasUsed)
+                {
+                    Debug.Log("3");
                     lastUseTime = Time.time;
+                }
             }
 
         }

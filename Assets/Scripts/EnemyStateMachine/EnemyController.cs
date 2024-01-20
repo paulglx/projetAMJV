@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("StartDeEnemy");
         currentState = new PatroleState(this, pointB);
         currentState.EnterState();
         agent = GetComponent<NavMeshAgent>();
@@ -113,8 +112,17 @@ public class EnemyController : MonoBehaviour
     public void SubscribeToFlag()
     {
         flag = GameObject.Find("Flag");
+        Component[] tousLesComponents = flag.GetComponents<Component>();
+        foreach (Component composant in tousLesComponents )
+        {
+            Debug.Log(composant.GetType().ToString());
+        }
+        
         if (flag!=null)
         {
+            Debug.Log(flag);
+            Debug.Log(flag.transform.position);
+            Debug.Log(flag.GetComponent<Rigidbody>());
             flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
 
         }
