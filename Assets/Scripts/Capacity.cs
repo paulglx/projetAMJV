@@ -24,19 +24,6 @@ public abstract class Capacity : MonoBehaviour
 
     public void TryToUse(GameObject target, Vector3 point)
     {
-
-/*        if (target == null && point == default)
-        {
-            Debug.Log("I can't use my capacity on nothing");
-            return;
-        }
-
-        if (target != null && target.CompareTag("Player") && !canBeUsedOnPlayer)
-        {
-            Debug.Log("I can't use my capacity on a player");
-            return;
-        }
-*/
         if (!CanBeUsed(target, point))
         {
             return;
@@ -44,15 +31,11 @@ public abstract class Capacity : MonoBehaviour
 
         if (Time.time - lastUseTime >= cooldown)
         {
-            Debug.Log("1");
-            Debug.Log(target);
             if (isInRange(target, point))
             {
-                Debug.Log("2");
                 bool hasUsed = Use(target, point);
                 if (hasUsed)
                 {
-                    Debug.Log("3");
                     lastUseTime = Time.time;
                 }
             }
@@ -95,22 +78,21 @@ public abstract class Capacity : MonoBehaviour
 
     private bool CanBeUsed(GameObject target, Vector3 point)
     {
-        if ((target=null) & (!canBeUsedOnFloor) & (!canBeUsedOnNothing))
+        if ((target == null) & (!canBeUsedOnFloor) & (!canBeUsedOnNothing))
         {
             Debug.Log("I need a target to use my capacity");
             return false;
         }
         else if ((point == default) & (!canBeUsedOnPlayer) & (!canBeUsedOnNothing))
-        {            
+        {
             Debug.Log("I need a point to use my capacity");
-            return false;   
+            return false;
         }
         else if (!canBeUsedOnNothing)
         {
             Debug.Log("I can't use my capacity on nothing");
             return false;
         }
-        Debug.Log("true");
         return true;
     }
 

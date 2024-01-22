@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -37,6 +39,13 @@ public class MovementManager : MonoBehaviour
         {
             agent = GetComponent<NavMeshAgent>();
         }
+
+        // Enlève les erreurs quand on tue quelqu'un
+        if (!agent.isActiveAndEnabled)
+        {
+            return;
+        }
+
         agent.SetDestination(point);
 
     }

@@ -7,14 +7,14 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
-//    [SerializeField] private float walkSpeed;
+    //    [SerializeField] private float walkSpeed;
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
     [SerializeField] private float idleDuration;
     [SerializeField] private float detectionRadius;
-    [SerializeField] private bool isChasing ;
+    [SerializeField] private bool isChasing;
     [SerializeField] private bool isKingChasing;
-    [SerializeField] private GameObject flag; 
+    [SerializeField] private GameObject flag;
     [SerializeField] private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
 
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         isChasing = false;
         isKingChasing = false;
-        SubscribeToFlag(); 
+        SubscribeToFlag();
 
     }
 
@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
         {
             currentState.ExitState();
             currentState = state;
-            currentState.EnterState();            
+            currentState.EnterState();
         }
 
     }
@@ -114,11 +114,11 @@ public class EnemyController : MonoBehaviour
     {
         flag = GameObject.Find("Flag");
 
-        if (flag!=null)
+        if (flag != null)
         {
-            flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
+            flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing);
         }
-        else 
+        else
         {
             Debug.LogWarning("The gameObject \"Flag\" is not found in the current scene.");
         }
@@ -126,12 +126,14 @@ public class EnemyController : MonoBehaviour
 
     public void UnsubscribeToFlag()
     {
-        flag.GetComponent<FlagManager>().FlagCaptured.AddListener(AttackTheKing); 
+        FlagManager flagManager = flag.GetComponent<FlagManager>();
+        if (flagManager)
+            flagManager.FlagCaptured.RemoveListener(AttackTheKing);
     }
 
-    private void OnDestroy() 
+    private void OnDestroy()
     {
-        UnsubscribeToFlag();       
+        UnsubscribeToFlag();
     }
 
 }
