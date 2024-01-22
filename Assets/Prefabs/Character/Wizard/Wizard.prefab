@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b837330981b4cbcbaebf5eec235e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &5436241530677658315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +109,8 @@ MonoBehaviour:
   cooldown: 2
   range: 10
   canBeUsedOnPlayer: 0
+  canBeUsedOnFloor: 1
+  canBeUsedOnNothing: 0
   wall: {fileID: 3269595011722081549, guid: 46d686b94318a4b318f73c07797d0f4f, type: 3}
 --- !u!114 &6568713229870472121
 MonoBehaviour:

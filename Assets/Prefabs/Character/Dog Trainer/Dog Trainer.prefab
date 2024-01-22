@@ -132,6 +132,8 @@ MonoBehaviour:
   cooldown: 5
   range: 50
   canBeUsedOnPlayer: 0
+  canBeUsedOnFloor: 0
+  canBeUsedOnNothing: 1
   spawnDistance: 2
   dogPrefab: {fileID: 1355391467611189933, guid: 5a5859ffbb1084e85a9dd194b81e1336, type: 3}
   dogs: []

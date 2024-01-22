@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private IPlayerState currentState;
+    private List<GameObject> chasedBy; 
     private UnityEngine.AI.NavMeshAgent agent;
 
 
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
         currentState = new IdlePlayerState(this);
         currentState.EnterState();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        chasedBy = new List<GameObject>();
     }
 
     private void Update()
@@ -61,4 +63,20 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    public void AddChasedBy(GameObject enemy)
+    {
+        chasedBy.Add(enemy); 
+    }
+
+    public void RemoveChasedBy(GameObject enemy)
+    {
+        chasedBy.Remove(enemy); 
+    }
+
+    public List<GameObject> GetChasedBy()
+    {
+        return chasedBy;
+    }
+    
 }
