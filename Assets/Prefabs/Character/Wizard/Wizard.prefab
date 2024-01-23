@@ -129,7 +129,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: 47cc6c8bd90da4eed99643d7e3434e87, type: 3}
   attackDelay: 2
   damage: 40
-  range: 5
+  range: 10
   projectile: {fileID: 4504059049462895213, guid: 246177d600be7ec27a6afa8b69a892aa, type: 3}
   target: {fileID: 0}
 --- !u!136 &2364972922317528855

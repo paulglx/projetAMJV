@@ -14,7 +14,7 @@ public class CapacityDogTrainer : Capacity
     [SerializeField] private uint maxDogs;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         dogs = new List<GameObject>();
     }
