@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 2269896948763102502}
   - component: {fileID: 8731270808970732167}
   m_Layer: 0
-  m_Name: You win
+  m_Name: Game Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
