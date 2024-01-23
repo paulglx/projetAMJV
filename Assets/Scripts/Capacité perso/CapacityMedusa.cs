@@ -9,7 +9,7 @@ public class CapacityMedusa : Capacity
         EnemyController enemy = target.GetComponent<EnemyController>();
         if (enemy)
         {
-            target.GetComponent<EnemyController>().TransitionToState(new StunState(target.GetComponent<EnemyController>()));
+            enemy.TransitionToState(new StunState(enemy));
             return true;
         }
         return false;

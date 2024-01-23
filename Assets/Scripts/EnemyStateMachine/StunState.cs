@@ -26,6 +26,7 @@ public class StunState : IEnemyState
         enemy.GetComponent<NavMeshAgent>().isStopped = true;
 
         enemy.StartCoroutine(WaitAndSwitchState(enemy));
+        enemy.SetStun(true);
     }
 
     public override void UpdateState()
@@ -37,6 +38,7 @@ public class StunState : IEnemyState
     {
         // Resume moving
         enemy.GetComponent<NavMeshAgent>().isStopped = false;
+        enemy.SetStun(false);
 
         GameObject.Destroy(stunEffectInstance);
     }

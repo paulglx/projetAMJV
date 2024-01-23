@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float detectionRadius;
     [SerializeField] private bool isChasing;
     [SerializeField] private bool isKingChasing;
+    [SerializeField] private bool isStun;
+
     [SerializeField] private GameObject flag;
     [SerializeField] private IEnemyState currentState;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -26,6 +28,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         isChasing = false;
         isKingChasing = false;
+        isStun = false;
         SubscribeToFlag();
 
     }
@@ -33,7 +36,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-        if (!isChasing & !isKingChasing)
+        if (!isChasing & !isKingChasing & !isStun)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
 
@@ -42,14 +45,13 @@ public class EnemyController : MonoBehaviour
                 isChasing = true;
                 TransitionToState(new ChaseState(this, hitColliders[0].gameObject));
                 hitColliders[0].gameObject.GetComponent<PlayerController>().AddChasedBy(this.gameObject);
-
             }
-
         }
     }
 
     public void TransitionToState(IEnemyState state)
     {
+        Debug.Log(currentState + " to "+ state);
         if (!isKingChasing)
         {
             currentState.ExitState();
@@ -102,6 +104,11 @@ public class EnemyController : MonoBehaviour
     public void isnotChassing()
     {
         isChasing = false;
+    }
+
+    public void SetStun(bool stun)
+    {
+        isStun = stun;
     }
 
     public void AttackTheKing(GameObject king)
