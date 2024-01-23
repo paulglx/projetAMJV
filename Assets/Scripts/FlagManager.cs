@@ -43,7 +43,7 @@ public class FlagManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EndgameUiManager endgameUiManager = FindObjectOfType<EndgameUiManager>();
+        EndgameUiManager endgameUiManager = FindAnyObjectByType<EndgameUiManager>(FindObjectsInactive.Include);
         endgameUiManager.SetStatus("You lose");
         endgameUiManager.Show();
     }
