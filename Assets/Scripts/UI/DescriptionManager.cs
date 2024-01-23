@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class DescriptionManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject player;
-    private Capacity playerCapacity;
     [SerializeField] private GameObject backgroundPanel;
-    [SerializeField] private GameObject nameTMP;
-    [SerializeField] private GameObject descriptionTMP;
     [SerializeField] private GameObject capacityDescriptionTMP;
     [SerializeField] private GameObject capacityTimerCircle;
+    [SerializeField] private GameObject descriptionTMP;
+    [SerializeField] private GameObject nameTMP;
+    [SerializeField] private GameObject player;
+    private Capacity playerCapacity;
 
     private void Start()
     {

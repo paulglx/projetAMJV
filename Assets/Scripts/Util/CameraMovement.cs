@@ -41,7 +41,7 @@ public class CameraMovement : MonoBehaviour
             direction += new Vector3(0f, 0f, -1f);
         }
 
-        transform.position += direction * movementSpeed * Time.deltaTime;
+        transform.position += movementSpeed * Time.deltaTime * direction;
     }
 
 

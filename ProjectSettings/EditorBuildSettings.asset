@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 75869255db372444b88b9681bd174ec0
   - enabled: 1
-    path: Assets/Scenes/Rayane.unity
-    guid: 213c45d3debc2bc519139422c7e19780
+    path: Assets/Scenes/Demo Scene.unity
+    guid: bbea126f051f54e6096a70f6970cfe82
   m_configObjects: {}

@@ -50,7 +50,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4.5
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 720
@@ -92,7 +92,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   shield: 1
-  healthBarPrefab: {fileID: 0}
+  healthBarPrefab: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
   healthBarPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5826480784536264562
 MonoBehaviour:
@@ -106,11 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efbd4627825249c4806a089d453a86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
-  range: 10
-  canBeUsedOnPlayer: 0
+  soundEffect: {fileID: 8300000, guid: 0a29e0c86e4c34a53ae69e092ec06343, type: 3}
   canBeUsedOnFloor: 1
   canBeUsedOnNothing: 0
+  canBeUsedOnPlayer: 0
+  cooldown: 2
+  range: 10
   wall: {fileID: 3269595011722081549, guid: 46d686b94318a4b318f73c07797d0f4f, type: 3}
 --- !u!114 &6568713229870472121
 MonoBehaviour:
@@ -128,7 +129,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: 47cc6c8bd90da4eed99643d7e3434e87, type: 3}
   attackDelay: 2
   damage: 40
-  range: 5
+  range: 10
   projectile: {fileID: 4504059049462895213, guid: 246177d600be7ec27a6afa8b69a892aa, type: 3}
   target: {fileID: 0}
 --- !u!136 &2364972922317528855

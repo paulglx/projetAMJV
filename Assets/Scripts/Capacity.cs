@@ -28,6 +28,10 @@ public abstract class Capacity : MonoBehaviour
 
     void PlayCapacitySound()
     {
+
+        if (!audioSource)
+            return;
+
         // On met un pitch aléatoire pour éviter que ce soit trop répétitif
         float pitch = Random.Range(0.9f, 1.1f);
         audioSource.pitch = pitch;

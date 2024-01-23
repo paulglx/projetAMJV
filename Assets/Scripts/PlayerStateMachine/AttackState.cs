@@ -41,8 +41,7 @@ public class AttackState : IPlayerState
             attack.SetTarget(null);
     }
 
-
-        public override string GetState()
+    public override string GetState()
     {
         return "AttackState";
     }

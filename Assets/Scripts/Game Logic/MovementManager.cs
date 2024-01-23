@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.AI;
 
