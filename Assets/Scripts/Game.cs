@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    private GameObject flag; 
-    private float temps; 
+    private GameObject flag;
+    private float temps;
     private int numberOfEnemies;
-    private GameObject king; 
-    [SerializeField] private GameObject enemyPrefab; 
-    [SerializeField] private int numberOfSpawn = 10; 
+    private GameObject king;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private int numberOfSpawn = 10;
 
 
     // Start is called before the first frame update
     void Start()
-    {   temps = Time.time;      
+    {
+        temps = Time.time;
         SubscribeToFlag();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         numberOfEnemies = enemies.Length;
@@ -31,7 +32,7 @@ public class Game : MonoBehaviour
     private void SetTheKing(GameObject player)
     {
         king = player;
-        CreateEnemies(); 
+        CreateEnemies();
     }
 
     private void SubscribeToFlag()
@@ -50,24 +51,24 @@ public class Game : MonoBehaviour
 
     private void CreateEnemies()
     {
-        for (int i =0; i<numberOfSpawn; i++)
+        for (int i = 0; i < numberOfSpawn; i++)
         {
-            float x = Random.Range(5f,21*6f); 
+            float x = Random.Range(5f, 21 * 6f);
             x = king.transform.position.x + x;
-            float z = Random.Range(5f,21*6f);
+            float z = Random.Range(5f, 21 * 6f);
             z = king.transform.position.z + z;
 
-            GameObject nouvelEnemy = Instantiate(enemyPrefab); 
-            nouvelEnemy.transform.position = new Vector3(x,0f,z); 
-            EnemyController nouvelEnemyContr= nouvelEnemy.GetComponent<EnemyController>();
+            GameObject nouvelEnemy = Instantiate(enemyPrefab);
+            nouvelEnemy.transform.position = new Vector3(x, 0f, z);
+            EnemyController nouvelEnemyContr = nouvelEnemy.GetComponent<EnemyController>();
             nouvelEnemyContr.TransitionToState(new KingChaseState(nouvelEnemyContr, king));
-            numberOfEnemies++; 
+            numberOfEnemies++;
         }
     }
 
 
     public void OneDie()
     {
-        numberOfEnemies -=1;
+        numberOfEnemies -= 1;
     }
 }

@@ -22,14 +22,8 @@ public abstract class Capacity : MonoBehaviour
 
     public virtual void Start()
     {
-
-        Debug.Log("CAPACITY START");
-
         lastUseTime = Time.time;
-
-        Debug.Log("Capacity : i getoradd audiosource");
         audioSource = gameObject.GetOrAddComponent<AudioSource>();
-        Debug.Log("i got " + audioSource);
     }
 
     void PlayCapacitySound()

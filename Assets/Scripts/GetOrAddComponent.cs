@@ -7,12 +7,10 @@ public static class Extensions
     {
         if (gameObject.TryGetComponent<T>(out T t))
         {
-            Debug.Log("GET: " + gameObject.name + " has got a " + typeof(T) + " so I get it");
             return t;
         }
         else
         {
-            Debug.Log("ADD: " + gameObject.name + " has no " + typeof(T) + " so I create it");
             return gameObject.AddComponent<T>();
         }
     }
