@@ -60,7 +60,10 @@ public class Game : MonoBehaviour
             GameObject nouvelEnemy = Instantiate(enemyPrefab); 
             nouvelEnemy.transform.position = new Vector3(x,0f,z); 
             EnemyController nouvelEnemyContr= nouvelEnemy.GetComponent<EnemyController>();
+            Debug.Log(nouvelEnemyContr);
+            Debug.Log(new KingChaseState(nouvelEnemyContr, king));
             nouvelEnemyContr.TransitionToState(new KingChaseState(nouvelEnemyContr, king));
+            nouvelEnemyContr.SetIsKingChasing();
             numberOfEnemies++; 
         }
     }

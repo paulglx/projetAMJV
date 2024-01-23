@@ -33,7 +33,12 @@ public class ChaseState : IEnemyState
 
     public override void ExitState()
     {
+        Debug.Log(attack);
+        Debug.Log(attack.GetTarget());
+        if (attack.GetTarget())
+        {
         attack.GetTarget().GetComponent<PlayerController>().RemoveChasedBy(enemyController.gameObject);
+        }
         attack.SetTarget(null);
         enemyController.isnotChassing();
         
