@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
         //Debug.Log(currentState + " to "+ state);
         if (!isKingChasing)
         {
-            currentState.ExitState();
+            currentState?.ExitState();
             currentState = state;
             currentState.EnterState();
         }
@@ -111,6 +111,10 @@ public class EnemyController : MonoBehaviour
         isStun = stun;
     }
 
+    public void SetIsKingChasing()
+    {
+        isKingChasing=true;
+    }
     public void AttackTheKing(GameObject king)
     {
         TransitionToState(new KingChaseState(this, king));

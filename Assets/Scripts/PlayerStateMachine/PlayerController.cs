@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public void TransitionToState(IPlayerState state)
     {
-
-        currentState.ExitState();
+        Debug.Log(this.gameObject + "  " +currentState + " to " + state);
+        currentState?.ExitState();
         currentState = state;
         currentState.EnterState();
     }
@@ -78,5 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         return chasedBy;
     }
+
+
     
 }
