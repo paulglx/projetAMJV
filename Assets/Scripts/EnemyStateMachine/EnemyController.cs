@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
-    //    [SerializeField] private float walkSpeed;
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
     [SerializeField] private float idleDuration;
@@ -18,8 +17,16 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private GameObject flag;
     [SerializeField] private IEnemyState currentState;
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
 
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(pointA, pointB);
+        Gizmos.DrawWireSphere(pointA, 1.0f);
+        Gizmos.DrawWireSphere(pointB, 0.8f);
+    }
 
     private void Start()
     {
@@ -113,7 +120,7 @@ public class EnemyController : MonoBehaviour
 
     public void SetIsKingChasing()
     {
-        isKingChasing=true;
+        isKingChasing = true;
     }
     public void AttackTheKing(GameObject king)
     {

@@ -6,11 +6,13 @@ public class FlagManager : MonoBehaviour
 {
     public UnityEvent<GameObject> FlagCaptured;
     private bool isCaptured;
+    private GameObject startZone;
 
     // Start is called before the first frame update
     void Start()
     {
         isCaptured = false;
+        startZone = FindFirstObjectByType<StartZone>().gameObject;
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class FlagManager : MonoBehaviour
     {
         gameObject.transform.parent = player.transform;
         Destroy(player.GetComponent<Attack>());
-        player.GetComponent<MovementManager>().GoToPoint(new Vector3(4.5f, 0, -7.5f));
+        player.GetComponent<MovementManager>().GoToPoint(startZone.transform.position);
         FlagCaptured.Invoke(player);
         isCaptured = true;
     }
