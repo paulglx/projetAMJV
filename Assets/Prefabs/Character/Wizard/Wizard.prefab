@@ -93,7 +93,7 @@ MonoBehaviour:
   maxHealth: 100
   shield: 1
   healthBarPrefab: {fileID: 7362161473953757508, guid: 134568981f13f41e59686b788b92b20c, type: 3}
-  healthBarPosition: {x: 0, y: 0, z: 0}
+  healthBarPosition: {x: 0, y: 2.2, z: 0}
 --- !u!114 &5826480784536264562
 MonoBehaviour:
   m_ObjectHideFlags: 0
