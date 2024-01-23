@@ -67,8 +67,10 @@ public class Attack : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.GetOrAddComponent<AudioSource>();
-
-        target = null;
+        if (!target)
+        {
+            target = null;
+        }
         navMeshAgent = GetComponent<NavMeshAgent>();
         movementManager = GetComponent<MovementManager>();
         canAttack = true;
@@ -151,7 +153,9 @@ public class Attack : MonoBehaviour
 
     public void SetTarget(GameObject newTarget)
     {
+        Debug.Log(gameObject + "  " +target + " Set " + newTarget);
         target = newTarget;
+        Debug.Log("set2 " + target);
     }
 
     public float GetRange()

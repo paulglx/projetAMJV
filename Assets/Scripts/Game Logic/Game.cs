@@ -53,16 +53,14 @@ public class Game : MonoBehaviour
     {
         for (int i = 0; i < numberOfSpawn; i++)
         {
-            float x = Random.Range(5f, 21 * 6f);
+            float x = Random.Range(5f, 21f);
             x = king.transform.position.x + x;
-            float z = Random.Range(5f, 21 * 6f);
+            float z = Random.Range(5f, 21);
             z = king.transform.position.z + z;
 
-            GameObject nouvelEnemy = Instantiate(enemyPrefab); 
+            GameObject nouvelEnemy = Instantiate(enemyPrefab,new Vector3(x,0f,z),Quaternion.identity); 
             nouvelEnemy.transform.position = new Vector3(x,0f,z); 
             EnemyController nouvelEnemyContr= nouvelEnemy.GetComponent<EnemyController>();
-            Debug.Log(nouvelEnemyContr);
-            Debug.Log(new KingChaseState(nouvelEnemyContr, king));
             nouvelEnemyContr.TransitionToState(new KingChaseState(nouvelEnemyContr, king));
             nouvelEnemyContr.SetIsKingChasing();
             numberOfEnemies++; 

@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
-
     }
 
     public void TransitionToState(IPlayerState state)
