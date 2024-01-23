@@ -125,5 +125,10 @@ public abstract class Capacity : MonoBehaviour
         return cooldown;
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 
 }

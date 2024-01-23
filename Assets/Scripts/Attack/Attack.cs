@@ -153,7 +153,7 @@ public class Attack : MonoBehaviour
 
     public void SetTarget(GameObject newTarget)
     {
-        Debug.Log(gameObject + "  " +target + " Set " + newTarget);
+        Debug.Log(gameObject + "  " + target + " Set " + newTarget);
         target = newTarget;
         Debug.Log("set2 " + target);
     }
@@ -176,5 +176,11 @@ public class Attack : MonoBehaviour
     public void SetDamage(float newDamage)
     {
         damage = newDamage;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
