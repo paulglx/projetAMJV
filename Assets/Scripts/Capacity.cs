@@ -1,25 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 public abstract class Capacity : MonoBehaviour
 {
 
-    [SerializeField] private float cooldown;
-    [SerializeField] private float range;
-    [SerializeField] private bool canBeUsedOnPlayer = false;
+    [SerializeField] private AudioClip soundEffect;
     [SerializeField] private bool canBeUsedOnFloor = false;
     [SerializeField] private bool canBeUsedOnNothing = false;
+    [SerializeField] private bool canBeUsedOnPlayer = false;
+    [SerializeField] private float cooldown;
+    [SerializeField] private float range;
+    private AudioSource audioSource;
 
     private float lastUseTime;
 
 
     public abstract bool Use(GameObject target = null, Vector3 point = default);
 
-    void Start()
+    public virtual void Start()
     {
+
+        Debug.Log("CAPACITY START");
+
         lastUseTime = Time.time;
+
+        Debug.Log("Capacity : i getoradd audiosource");
+        audioSource = gameObject.GetOrAddComponent<AudioSource>();
+        Debug.Log("i got " + audioSource);
+    }
+
+    void PlayCapacitySound()
+    {
+        // On met un pitch aléatoire pour éviter que ce soit trop répétitif
+        float pitch = Random.Range(0.9f, 1.1f);
+        audioSource.pitch = pitch;
+
+        audioSource.PlayOneShot(soundEffect);
     }
 
     public void TryToUse(GameObject target, Vector3 point)
@@ -36,6 +55,7 @@ public abstract class Capacity : MonoBehaviour
                 bool hasUsed = Use(target, point);
                 if (hasUsed)
                 {
+                    PlayCapacitySound();
                     lastUseTime = Time.time;
                 }
             }
@@ -78,17 +98,17 @@ public abstract class Capacity : MonoBehaviour
 
     private bool CanBeUsed(GameObject target, Vector3 point)
     {
-        if ((target == null) & (!canBeUsedOnFloor) & (!canBeUsedOnNothing))
+        if ((target == null) && (!canBeUsedOnFloor) && (!canBeUsedOnNothing))
         {
             Debug.Log("I need a target to use my capacity");
             return false;
         }
-        else if ((point == default) & (!canBeUsedOnPlayer) & (!canBeUsedOnNothing))
+        else if ((point == default) && (!canBeUsedOnPlayer) && (!canBeUsedOnNothing))
         {
             Debug.Log("I need a point to use my capacity");
             return false;
         }
-        else if (!canBeUsedOnNothing)
+        else if (target == null && point == default && !canBeUsedOnNothing)
         {
             Debug.Log("I can't use my capacity on nothing");
             return false;

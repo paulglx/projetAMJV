@@ -44438,6 +44438,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8317025884679301491, guid: 1b3f23af4c5b7e299a5d7531519cdc09, type: 3}
+      propertyPath: displayName
+      value: Chameleon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

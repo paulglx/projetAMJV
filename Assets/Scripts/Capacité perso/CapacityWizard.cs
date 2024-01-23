@@ -10,8 +10,9 @@ public class CapacityWizard : Capacity
     [SerializeField] private GameObject wall;
     private GameObject level;
 
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         level = FindObjectOfType<NavMeshSurface>().gameObject;
     }
 

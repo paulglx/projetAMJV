@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -65,7 +66,7 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = gameObject.GetOrAddComponent<AudioSource>();
 
         target = null;
         navMeshAgent = GetComponent<NavMeshAgent>();

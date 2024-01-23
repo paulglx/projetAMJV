@@ -15,8 +15,9 @@ public class CapacityDoctor : Capacity
     private GameObject rageEffectInstance;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         customers = new List<GameObject>();
     }
 

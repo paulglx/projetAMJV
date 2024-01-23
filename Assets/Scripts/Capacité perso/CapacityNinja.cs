@@ -7,12 +7,13 @@ public class CapacityNinja : Capacity
 
     private MovementManager movementManager;
 
-//    private Attack attack; 
+    //    private Attack attack; 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        movementManager= GetComponent<MovementManager>();
-//        attack = GetComponent<Attack>();
+        base.Start();
+        movementManager = GetComponent<MovementManager>();
+        //        attack = GetComponent<Attack>();
     }
 
     public override bool Use(GameObject target, Vector3 point)
@@ -35,9 +36,9 @@ public class CapacityNinja : Capacity
     private void specialattaque(GameObject target)
     {
         Vector3 sauvtempo = transform.position;
-        transform.position = target.transform.position ;
-        target.transform.position = sauvtempo  ;
-        
+        transform.position = target.transform.position;
+        target.transform.position = sauvtempo;
+
         movementManager.Stop();
 
 

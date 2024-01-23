@@ -8,6 +8,11 @@ public class CapacityTank : Capacity
 
     [SerializeField] private float radius;
 
+    public override void Start()
+    {
+        base.Start();
+    }
+
     public override bool Use(GameObject target, Vector3 point)
     {
         // Get all enemies in range
