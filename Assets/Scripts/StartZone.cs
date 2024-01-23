@@ -16,7 +16,7 @@ public class StartZone : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.GetComponent<FlagManager>())
+        if (other.gameObject.layer == 8)
         {
             EndGame();
         }
