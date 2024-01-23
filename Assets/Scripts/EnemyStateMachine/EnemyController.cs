@@ -126,9 +126,12 @@ public class EnemyController : MonoBehaviour
 
     public void UnsubscribeToFlag()
     {
-        FlagManager flagManager = flag.GetComponent<FlagManager>();
-        if (flagManager)
-            flagManager.FlagCaptured.RemoveListener(AttackTheKing);
+        if (flag)
+        {
+            FlagManager flagManager = flag.GetComponent<FlagManager>();
+            if (flagManager)
+                flagManager.FlagCaptured.RemoveListener(AttackTheKing);
+        }
     }
 
     private void OnDestroy()
