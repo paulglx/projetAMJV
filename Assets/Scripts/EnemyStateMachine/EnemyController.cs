@@ -144,6 +144,7 @@ public class EnemyController : MonoBehaviour
     private void OnDestroy()
     {
         UnsubscribeToFlag();
+        GameObject.Find("GameManager").GetComponent<Game>().OneDie();
     }
 
 }
