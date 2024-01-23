@@ -129,11 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938413076c9eb47bfb84e621bc82fbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
-  range: 50
-  canBeUsedOnPlayer: 0
+  soundEffect: {fileID: 8300000, guid: 0a29e0c86e4c34a53ae69e092ec06343, type: 3}
   canBeUsedOnFloor: 0
   canBeUsedOnNothing: 1
+  canBeUsedOnPlayer: 0
+  cooldown: 5
+  range: 50
   spawnDistance: 2
   dogPrefab: {fileID: 1355391467611189933, guid: 5a5859ffbb1084e85a9dd194b81e1336, type: 3}
   dogs: []

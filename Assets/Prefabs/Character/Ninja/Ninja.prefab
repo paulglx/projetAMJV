@@ -148,11 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8854a07c971a20872b5d95819e80ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
-  range: 1000
-  canBeUsedOnPlayer: 1
+  soundEffect: {fileID: 8300000, guid: 0a29e0c86e4c34a53ae69e092ec06343, type: 3}
   canBeUsedOnFloor: 0
   canBeUsedOnNothing: 0
+  canBeUsedOnPlayer: 1
+  cooldown: 5
+  range: 1000
 --- !u!114 &8317025884679301491
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ public class EnemyController : MonoBehaviour
 
     public void TransitionToState(IEnemyState state)
     {
+        //Debug.Log(currentState + " to "+ state);
         if (!isKingChasing)
         {
             currentState?.ExitState();

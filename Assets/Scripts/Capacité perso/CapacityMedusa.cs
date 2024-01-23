@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CapacityMedusa : Capacity
 {
+
+    public override void Start()
+    {
+        base.Start();
+    }
+
     public override bool Use(GameObject target, Vector3 point = default)
     {
         EnemyController enemy = target.GetComponent<EnemyController>();

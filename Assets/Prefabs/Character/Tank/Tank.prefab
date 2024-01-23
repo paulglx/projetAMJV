@@ -181,11 +181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f3de0247b344bc6bad9498c3b0f67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
-  range: 99999
-  canBeUsedOnPlayer: 0
+  soundEffect: {fileID: 8300000, guid: 47cc6c8bd90da4eed99643d7e3434e87, type: 3}
   canBeUsedOnFloor: 0
   canBeUsedOnNothing: 1
+  canBeUsedOnPlayer: 0
+  cooldown: 10
+  range: 99999
   radius: 5
 --- !u!1001 &122879807867555980
 PrefabInstance:

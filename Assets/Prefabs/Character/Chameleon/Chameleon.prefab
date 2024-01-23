@@ -182,11 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0608cb379e865d291f163f328595f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
-  range: 0
-  canBeUsedOnPlayer: 0
+  soundEffect: {fileID: 8300000, guid: 0a29e0c86e4c34a53ae69e092ec06343, type: 3}
   canBeUsedOnFloor: 0
   canBeUsedOnNothing: 1
+  canBeUsedOnPlayer: 0
+  cooldown: 3
+  range: 0
   playerLayer: 0
   invisibleLayer: 0
   capacityTime: 2

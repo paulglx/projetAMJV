@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b837330981b4cbcbaebf5eec235e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &5436241530677658315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,12 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 0
+  soundEffect: {fileID: 8300000, guid: 9ec00069968ca4a739f7d878c9beaf1f, type: 3}
+  attackDelay: 2
   damage: 10
   range: 1
-  target: {fileID: 0}
-  attackDelay: 2
-  attackType: 0
   projectile: {fileID: 0}
+  target: {fileID: 0}
 --- !u!136 &2364972922317528855
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -147,11 +149,14 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  walkSpeed: 3
   pointA: {x: 0, y: 0, z: 0}
   pointB: {x: 0, y: 0, z: 0}
   idleDuration: 3
   detectionRadius: 10
+  isChasing: 0
+  isKingChasing: 0
+  isStun: 0
+  flag: {fileID: 0}
 --- !u!1001 &8022139289352157625
 PrefabInstance:
   m_ObjectHideFlags: 0
