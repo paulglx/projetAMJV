@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b837330981b4cbcbaebf5eec235e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &5436241530677658315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,12 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 1
+  soundEffect: {fileID: 8300000, guid: 1c71c89f3735441b7bfccd7e54f7b554, type: 3}
+  attackDelay: 1
   damage: 5
   range: 15
-  target: {fileID: 0}
-  attackDelay: 1
-  attackType: 1
   projectile: {fileID: 4504059049462895213, guid: 67448379e0947439d94b5e9e83fca54a, type: 3}
+  target: {fileID: 0}
 --- !u!136 &2364972922317528855
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -149,6 +151,8 @@ MonoBehaviour:
   cooldown: 3
   range: 10
   canBeUsedOnPlayer: 1
+  canBeUsedOnFloor: 0
+  canBeUsedOnNothing: 0
   forceEnrage: 0
   healAmount: 25
   rageDuration: 5

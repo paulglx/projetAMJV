@@ -106,12 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 2
+  soundEffect: {fileID: 8300000, guid: b75d329b6608343a9ae3f83690e43e47, type: 3}
+  attackDelay: 2
   damage: 25
   range: 10
-  target: {fileID: 0}
-  attackDelay: 2
-  attackType: 2
   projectile: {fileID: 4504059049462895213, guid: 265fb5a13039c48eda62e005953c1131, type: 3}
+  target: {fileID: 0}
 --- !u!136 &2364972922317528855
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -106,12 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 0
+  soundEffect: {fileID: 8300000, guid: 9ec00069968ca4a739f7d878c9beaf1f, type: 3}
+  attackDelay: 0.5
   damage: 15
   range: 2
-  target: {fileID: 0}
-  attackDelay: 0.5
-  attackType: 0
   projectile: {fileID: 0}
+  target: {fileID: 0}
 --- !u!136 &2364972922317528855
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -186,12 +187,8 @@ MonoBehaviour:
   canBeUsedOnPlayer: 0
   canBeUsedOnFloor: 0
   canBeUsedOnNothing: 1
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  invisibleLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  playerLayer: 0
+  invisibleLayer: 0
   capacityTime: 2
 --- !u!1001 &6184751714021476011
 PrefabInstance:

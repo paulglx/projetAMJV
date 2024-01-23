@@ -6,15 +6,18 @@ using UnityEngine.AI;
 public class Attack : MonoBehaviour
 {
 
+    [SerializeField] private AttackType attackType = AttackType.CONTACT;
+    [SerializeField] private AudioClip soundEffect;
+    [SerializeField] private float attackDelay; // Attack delay in seconds
     [SerializeField] private float damage;
     [SerializeField] private float range; // Distance at which the soldier can hit the target
-    [SerializeField] private GameObject target; // The attacker will attack the target if in range. Else, it will follow it.
-    [SerializeField] private float attackDelay; // Attack delay in seconds
-    [SerializeField] private AttackType attackType = AttackType.CONTACT;
     [SerializeField] private GameObject projectile;
-    private NavMeshAgent navMeshAgent; 
+    [SerializeField] private GameObject target; // The attacker will attack the target if in range. Else, it will follow it.
+
+    private AudioSource audioSource;
+    private NavMeshAgent navMeshAgent;
     private MovementManager movementManager;
-    private bool canAttack; 
+    private bool canAttack;
 
     enum AttackType
     {
@@ -39,7 +42,7 @@ public class Attack : MonoBehaviour
                 if (distance <= range & canAttack)
                 {
                     DoAttack(target);
-                    canAttack= false; 
+                    canAttack = false;
                     StartCoroutine(WaitForAnotherAttack());
                 }
                 else
@@ -54,7 +57,7 @@ public class Attack : MonoBehaviour
     IEnumerator WaitForAnotherAttack()
     {
         yield return new WaitForSeconds(attackDelay);
-        canAttack = true; 
+        canAttack = true;
 
     }
 
@@ -62,10 +65,12 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
         target = null;
         navMeshAgent = GetComponent<NavMeshAgent>();
         movementManager = GetComponent<MovementManager>();
-        canAttack = true; 
+        canAttack = true;
         StartCoroutine(AttackLoop());
 
     }
@@ -84,8 +89,20 @@ public class Attack : MonoBehaviour
             navMeshAgent.stoppingDistance = 1;
     }
 
+    void PlayAttackSound()
+    {
+        // On met un pitch aléatoire pour éviter que ce soit trop répétitif
+        float pitch = Random.Range(0.9f, 1.1f);
+        audioSource.pitch = pitch;
+
+        audioSource.PlayOneShot(soundEffect);
+    }
+
     void DoAttack(GameObject target)
     {
+
+        PlayAttackSound();
+
         if (attackType == AttackType.CONTACT)
             DoContactAttack(target);
         else if (attackType == AttackType.REMOTE)

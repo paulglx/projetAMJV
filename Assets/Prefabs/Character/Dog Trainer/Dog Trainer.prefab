@@ -183,12 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ae806a4a2b419985d78b165f4a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 3
+  soundEffect: {fileID: 8300000, guid: 531126a261ff14bb2b53cd715f2374bd, type: 3}
+  attackDelay: 0
   damage: 0
   range: 100000000
-  target: {fileID: 0}
-  attackDelay: 0
-  attackType: 3
   projectile: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1001 &166519370382500041
 PrefabInstance:
   m_ObjectHideFlags: 0
