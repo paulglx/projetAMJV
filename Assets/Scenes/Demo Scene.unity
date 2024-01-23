@@ -3896,7 +3896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280112890598779722, guid: 402ba7c6952314c1cafdf92b03b7aa04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17169,7 +17169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4784500690803805594, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.01
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 4784500690803805594, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17177,7 +17177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4784500690803805594, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.8
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 4784500690803805594, guid: bd38f9bb89eea34c78e1075217abad6f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24309,10 +24309,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5824662448455100210, guid: ec7aef699c4f047d2831293e65d95b04, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 236414983192952826, guid: ec7aef699c4f047d2831293e65d95b04, type: 3}
       propertyPath: m_Name
       value: Echap Menu UI
