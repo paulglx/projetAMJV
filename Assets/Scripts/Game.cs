@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-
+    private GameObject flag; 
     private Time temps; 
     private int numberOfEnemies;
 
