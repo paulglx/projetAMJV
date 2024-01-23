@@ -23,18 +23,22 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        currentState = new PatroleState(this, pointB);
-        currentState.EnterState();
+        if (!isKingChasing)
+        {
+            currentState = new PatroleState(this, pointB);
+            currentState.EnterState();
+            isKingChasing = false;
+
+        }
         agent = GetComponent<NavMeshAgent>();
         isChasing = false;
-        isKingChasing = false;
         isStun = false;
         SubscribeToFlag();
-
     }
 
     private void Update()
     {
+        //StartCoroutine(WaitAndPrint()); 
         currentState.UpdateState();
         if (!isChasing & !isKingChasing & !isStun)
         {
@@ -42,6 +46,9 @@ public class EnemyController : MonoBehaviour
 
             if (hitColliders.Length > 0)
             {
+                Debug.Log("here");
+                Debug.Log("ch" + isChasing + " ki" + isKingChasing + " st" + isStun);
+
                 isChasing = true;
                 TransitionToState(new ChaseState(this, hitColliders[0].gameObject));
                 hitColliders[0].gameObject.GetComponent<PlayerController>().AddChasedBy(this.gameObject);
@@ -143,6 +150,12 @@ public class EnemyController : MonoBehaviour
             if (flagManager)
                 flagManager.FlagCaptured.RemoveListener(AttackTheKing);
         }
+    }
+
+    IEnumerator WaitAndPrint()
+    {
+        yield return new WaitForSeconds(10f);
+        Debug.Log(currentState);
     }
 
     private void OnDestroy()

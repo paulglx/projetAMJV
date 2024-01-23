@@ -6,7 +6,7 @@ public class KingChaseState : IEnemyState
 {
     private EnemyController enemyController; 
 
-    private readonly GameObject enemyTarget;
+    [SerializeField] private GameObject enemyTarget;
 
     private Attack attack; 
 
@@ -21,6 +21,7 @@ public class KingChaseState : IEnemyState
     {
         attack = enemyController.GetComponent<Attack>();
         attack.SetTarget(enemyTarget);
+        Debug.Log("Enter "+ attack.GetTarget());
     }
 
     public override void UpdateState()
@@ -29,6 +30,8 @@ public class KingChaseState : IEnemyState
         {
             enemyController.TransitionToState(new IdleState(enemyController));
         }
+        Debug.Log(attack.GetTarget());
+        Debug.Log(enemyTarget);
     }
 
     public override void ExitState()
