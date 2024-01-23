@@ -51,6 +51,6 @@ public class Game : MonoBehaviour
 
     public void OneDie()
     {
-        numberOfEnemies -=1
+        numberOfEnemies -=1;
     }
 }
