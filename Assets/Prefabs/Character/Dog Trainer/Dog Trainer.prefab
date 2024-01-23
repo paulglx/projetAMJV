@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackType: 3
-  soundEffect: {fileID: 8300000, guid: 531126a261ff14bb2b53cd715f2374bd, type: 3}
+  soundEffect: {fileID: 8300000, guid: 0a29e0c86e4c34a53ae69e092ec06343, type: 3}
   attackDelay: 0
   damage: 0
   range: 100000000
