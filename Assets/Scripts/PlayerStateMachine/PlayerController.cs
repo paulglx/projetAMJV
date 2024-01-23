@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private IPlayerState currentState;
-    private List<GameObject> chasedBy; 
+    private List<GameObject> chasedBy;
     private UnityEngine.AI.NavMeshAgent agent;
 
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public void TransitionToState(IPlayerState state)
     {
-        Debug.Log(this.gameObject + "  " +currentState + " to " + state);
+        //Debug.Log(gameObject + "  " +currentState + " to " + state);
         currentState?.ExitState();
         currentState = state;
         currentState.EnterState();
@@ -53,25 +53,25 @@ public class PlayerController : MonoBehaviour
 
     public void GoTo(Vector3 point)
     {
-        if (currentState.GetState()!= "KingState")
+        if (currentState.GetState() != "KingState")
         {
-            TransitionToState(new MovementState(this, point)) ;
+            TransitionToState(new MovementState(this, point));
         }
-        else 
+        else
         {
-            TransitionToState( new KingState(this, point));
+            TransitionToState(new KingState(this, point));
         }
 
     }
 
     public void AddChasedBy(GameObject enemy)
     {
-        chasedBy.Add(enemy); 
+        chasedBy.Add(enemy);
     }
 
     public void RemoveChasedBy(GameObject enemy)
     {
-        chasedBy.Remove(enemy); 
+        chasedBy.Remove(enemy);
     }
 
     public List<GameObject> GetChasedBy()
@@ -80,5 +80,5 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    
+
 }
