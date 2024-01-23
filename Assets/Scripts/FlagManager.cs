@@ -43,6 +43,8 @@ public class FlagManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Fin de la game, perdu");
+        EndgameUiManager endgameUiManager = FindObjectOfType<EndgameUiManager>();
+        endgameUiManager.SetStatus("You lose");
+        endgameUiManager.Show();
     }
 }
