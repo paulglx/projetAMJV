@@ -153,9 +153,9 @@ public class Attack : MonoBehaviour
 
     public void SetTarget(GameObject newTarget)
     {
-        Debug.Log(gameObject + "  " + target + " Set " + newTarget);
+        //Debug.Log(gameObject + "  " + target + " Set " + newTarget);
         target = newTarget;
-        Debug.Log("set2 " + target);
+        //Debug.Log("set2 " + target);
     }
 
     public float GetRange()

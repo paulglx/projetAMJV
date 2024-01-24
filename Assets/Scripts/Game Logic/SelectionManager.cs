@@ -175,8 +175,6 @@ public class SelectionManager : MonoBehaviour
     {
 
         Material mat = player.GetComponentInChildren<Renderer>().material;
-
-
         int playerId = player.GetInstanceID();
 
         if (!playersBaseColors.ContainsKey(playerId))

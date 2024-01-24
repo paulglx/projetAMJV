@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EndgameUiManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject statusText;
     private TextMeshProUGUI statusTextTMP;
+    private Canvas canvas;
 
     void Start()
     {
+        canvas = GetComponentInChildren<Canvas>();
+        Hide();
+
         statusTextTMP = statusText.GetComponent<TextMeshProUGUI>();
     }
 
@@ -21,11 +26,13 @@ public class EndgameUiManager : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        if (canvas)
+            canvas.gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        if (canvas)
+            canvas.gameObject.SetActive(false);
     }
 }

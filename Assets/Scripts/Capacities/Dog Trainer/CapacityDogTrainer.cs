@@ -42,7 +42,6 @@ public class CapacityDogTrainer : Capacity
 
         foreach (GameObject dog in dogs.ToList())
         {
-
             dog.GetComponent<Attack>().SetTarget(target);
         }
     }
