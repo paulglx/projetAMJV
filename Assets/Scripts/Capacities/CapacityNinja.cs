@@ -13,7 +13,6 @@ public class CapacityNinja : Capacity
     {
         base.Start();
         movementManager = GetComponent<MovementManager>();
-        //        attack = GetComponent<Attack>();
     }
 
     public override bool Use(GameObject target, Vector3 point)
@@ -21,7 +20,7 @@ public class CapacityNinja : Capacity
         if (target)
         {
             Debug.Log("I am a Ninja and I use my capacity on " + target.name);
-            specialattaque(target);
+            DoSwap(target);
 
             return true;
         }
@@ -33,15 +32,17 @@ public class CapacityNinja : Capacity
     }
 
 
-    private void specialattaque(GameObject target)
+    private void DoSwap(GameObject target)
     {
-        Vector3 sauvtempo = transform.position;
-        transform.position = target.transform.position;
-        target.transform.position = sauvtempo;
-
+        (target.transform.position, transform.position) = (transform.position, target.transform.position);
+        target.GetComponent<MovementManager>().GoToPoint(target.transform.position);
         movementManager.Stop();
 
-
+        EnemyController enemy = target.GetComponent<EnemyController>();
+        if (enemy)
+        {
+            enemy.TransitionToState(new StunState(enemy));
+        }
     }
 
 
