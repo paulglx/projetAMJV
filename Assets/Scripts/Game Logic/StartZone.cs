@@ -17,6 +17,8 @@ public class StartZone : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        Debug.Log("Other in triggger:" + other.gameObject.name + " layer " + other.gameObject.layer);
+
         if (other.gameObject.layer == 8)
         {
             EndGame();

@@ -148,11 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42dcb42634b954dd49dc6e87d38fbedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: Ninja
-  description: He can escape you alertness
-  capacityDescription: 'be invisible for enemy
-
-'
+  displayName: Chameleon
+  description: He fights with his fists and can become invisible to escape the alertness
+    of the enemies
+  capacityDescription: become invisible
 --- !u!114 &7486366746926454758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,84 +190,6 @@ MonoBehaviour:
   playerLayer: 0
   invisibleLayer: 0
   capacityTime: 2
---- !u!1001 &6184751714021476011
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 7597199614936374575}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.246
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.164
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6738208
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.15174413
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.67843556
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.2503291
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_Name
-      value: SamuraiHead
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
---- !u!4 &5935216092665372992 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69de3310a2cdf4ae7b6b52b5f68ea56d, type: 3}
-  m_PrefabInstance: {fileID: 6184751714021476011}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8022139289352157625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 448937067592381834, guid: 22cf854685438452d8430ecd07822d67, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a680aa3761b5c4117a32e2f6cf1170bf, type: 2}
+      objectReference: {fileID: 2100000, guid: 48d5ba23950fc479c8f9df3ef02c66dd, type: 2}
     - target: {fileID: 3905634659396556813, guid: 22cf854685438452d8430ecd07822d67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -327,19 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 448937067595850902, guid: 22cf854685438452d8430ecd07822d67, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 5935216092665372992}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22cf854685438452d8430ecd07822d67, type: 3}
 --- !u!4 &6442336773690565044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3905634659396556813, guid: 22cf854685438452d8430ecd07822d67, type: 3}
-  m_PrefabInstance: {fileID: 8022139289352157625}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7597199614936374575 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 448937067595850902, guid: 22cf854685438452d8430ecd07822d67, type: 3}
   m_PrefabInstance: {fileID: 8022139289352157625}
   m_PrefabAsset: {fileID: 0}

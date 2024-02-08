@@ -96,6 +96,7 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             GameObject target = hit.collider.gameObject;
+            Debug.Log("Clicked object : " + target);
 
             // Capacity key is held : use capacity
             if (Input.GetKey(KeyCode.A))
